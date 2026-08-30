@@ -1,0 +1,10 @@
+# macOS 垃圾文件
+.DS_Store
+._*
+**/.DS_Store
+**/._*
+# 苹果恢复镜像体积过大(688MB)，仅本地备份不入库
+efi-backup/original-20260830/com.apple.recovery.boot/
+# 工具与上游仓库(另行管理)
+tools/_downloads/
+upstream/
