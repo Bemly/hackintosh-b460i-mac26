@@ -1,0 +1,172 @@
+## ACPI
+  [启用] SSDT-AWAC.aml
+  [启用] SSDT-DMAC.aml
+  [启用] SSDT-EC.aml
+  [启用] SSDT-GPRW.aml
+  [启用] SSDT-MCHC.aml
+  [启用] SSDT-MEM2.aml
+  [启用] SSDT-PLUG.aml
+  [启用] SSDT-PMCR.aml
+  [启用] SSDT-RHUB.aml
+  [启用] SSDT-SBUS.aml
+## Booter/Quirks
+  AllowRelocationBlock = False
+  AvoidRuntimeDefrag = True
+  DevirtualiseMmio = True
+  DisableSingleUser = False
+  DisableVariableWrite = False
+  DiscardHibernateMap = False
+  EnableSafeModeSlide = True
+  EnableWriteUnprotector = False
+  ForceBooterSignature = False
+  ForceExitBootServices = False
+  ProtectMemoryRegions = False
+  ProtectSecureBoot = False
+  ProtectUefiServices = True
+  ProvideCustomSlide = True
+  ProvideMaxSlide = 0
+  RebuildAppleMemoryMap = True
+  ResizeAppleGpuBars = 0
+  SetupVirtualMap = False
+  SignalAppleOS = False
+  SyncRuntimePermissions = True
+## DeviceProperties
+  设备 PciRoot(0x0)/Pci(0x1F,0x3)
+     layout-id = 7
+  设备 PciRoot(0x0)/Pci(0x2,0x0)
+     AAPL,ig-platform-id = <0300923e>
+     device-id = <c89b0000>
+## Kernel/Add (kext 加载顺序与启用)
+   0. [x] Lilu.kext                                     MinK=           MaxK= ExecPath=Contents/MacOS/Lilu
+   1. [x] itlwm.kext                                    MinK=           MaxK= ExecPath=Contents/MacOS/itlwm
+   2. [x] VirtualSMC.kext                               MinK=           MaxK= ExecPath=Contents/MacOS/VirtualSMC
+   3. [x] CPUFriend.kext                                MinK=           MaxK= ExecPath=Contents/MacOS/CPUFriend
+   4. [x] CPUFriendDataProvider.kext                    MinK=           MaxK= ExecPath=
+   5. [x] IntelBluetoothFirmware.kext                   MinK=           MaxK= ExecPath=Contents/MacOS/IntelBluetoothFirmware
+   6. [ ] IntelBluetoothInjector.kext                   MinK=           MaxK= ExecPath=
+   7. [ ] AirportItlwm.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/AirportItlwm
+   8. [x] NVMeFix.kext                                  MinK=           MaxK= ExecPath=Contents/MacOS/NVMeFix
+   9. [x] RadeonSensor.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/RadeonSensor
+  10. [x] RealtekRTL8111.kext                           MinK=           MaxK= ExecPath=Contents/MacOS/RealtekRTL8111
+  11. [x] USBPorts.kext                                 MinK=           MaxK= ExecPath=
+  12. [x] WhateverGreen.kext                            MinK=           MaxK= ExecPath=Contents/MacOS/WhateverGreen
+  13. [x] XHCI-unsupported.kext                         MinK=           MaxK= ExecPath=
+  14. [x] AppleALC.kext                                 MinK=           MaxK= ExecPath=Contents/MacOS/AppleALC
+  15. [x] BlueToolFixup.kext                            MinK=           MaxK= ExecPath=Contents/MacOS/BlueToolFixup
+  16. [x] IntelBTPatcher.kext                           MinK=           MaxK= ExecPath=Contents/MacOS/IntelBTPatcher
+  17. [x] SMCProcessor.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/SMCProcessor
+  18. [x] SMCRadeonGPU.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/SMCRadeonGPU
+  19. [x] SMCSuperIO.kext                               MinK=           MaxK= ExecPath=Contents/MacOS/SMCSuperIO
+## Kernel/Quirks
+  AppleCpuPmCfgLock = False
+  AppleXcpmCfgLock = False
+  AppleXcpmExtraMsrs = False
+  AppleXcpmForceBoost = False
+  CustomPciSerialDevice = False
+  CustomSMBIOSGuid = False
+  DisableIoMapper = True
+  DisableLinkeditJettison = True
+  DisableRtcChecksum = False
+  ExtendBTFeatureFlags = False
+  ExternalDiskIcons = False
+  ForceAquantiaEthernet = False
+  ForceSecureBootScheme = False
+  IncreasePciBarSize = False
+  LapicKernelPanic = False
+  LegacyCommpage = False
+  PanicNoKextDump = True
+  PowerTimeoutKernelPanic = True
+  ProvideCurrentCpuInfo = False
+  SetApfsTrimTimeout = -1
+  ThirdPartyDrives = False
+  XhciPortLimit = False
+## Misc/Boot
+  ConsoleAttributes = 0
+  HibernateMode = None
+  HibernateSkipsPicker = False
+  HideAuxiliary = True
+  LauncherOption = Disabled
+  LauncherPath = Default
+  PickerAttributes = 144
+  PickerAudioAssist = False
+  PickerMode = External
+  PickerVariant = Blackosx\BsxOc1
+  PollAppleHotKeys = True
+  ShowPicker = True
+  TakeoffDelay = 0
+  Timeout = 3
+## Misc/Debug
+  AppleDebug = False
+  ApplePanic = False
+  DisableWatchDog = True
+  DisplayDelay = 0
+  DisplayLevel = 2147483650
+  LogModules = 
+  SysReport = False
+  Target = 0
+## Misc/Security
+  AllowSetDefault = True
+  ApECID = 0
+  AuthRestart = False
+  BlacklistAppleUpdate = True
+  DmgLoading = Signed
+  EnablePassword = False
+  ExposeSensitiveData = 4
+  HaltLevel = 2147483648
+  PasswordHash = b''
+  PasswordSalt = b''
+  ScanPolicy = 0
+  SecureBootModel = j185f
+  Vault = Optional
+## NVRAM
+  GUID 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14
+     DefaultBackgroundColor = <00000000>
+     UIScale = <02>
+  GUID 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102
+     rtc-blacklist = <>
+  GUID 7C436110-AB2A-4BBB-A880-FE41995C9F82
+     ForceDisplayRotationInEFI = 0
+     SystemAudioVolume = <46>
+     boot-args = agdpmod=pikera keepsyms=1 debug=0x100
+     csr-active-config = <03000000>
+     prev-lang:kbd = zh-Hans:252
+     run-efi-updater = No
+## PlatformInfo/Generic
+  AdviseFeatures = True
+  MLB = REDACTED-MLB
+  MaxBIOSVersion = False
+  ProcessorType = 0
+  ROM = <d8004d5e0853>
+  SpoofVendor = False
+  SystemMemoryStatus = Auto
+  SystemProductName = iMac20,1
+  SystemSerialNumber = REDACTED-SERIAL
+  SystemUUID = CA090B5F-B093-4AF3-AA4E-C6D10A53B024
+## UEFI/Drivers
+  [x] ResetNvramEntry.efi
+  [x] CrScreenshotDxe.efi
+  [x] HfsPlus.efi
+  [x] OpenCanopy.efi
+  [x] OpenRuntime.efi
+## UEFI/APFS
+  EnableJumpstart = True
+  GlobalConnect = False
+  HideVerbose = True
+  JumpstartHotPlug = True
+  MinDate = 0
+  MinVersion = 0
+## UEFI/Quirks
+  ActivateHpetSupport = False
+  DisableSecurityPolicy = False
+  EnableVectorAcceleration = True
+  EnableVmx = False
+  ExitBootServicesDelay = 0
+  ForceOcWriteFlash = False
+  ForgeUefiSupport = False
+  IgnoreInvalidFlexRatio = False
+  ReleaseUsbOwnership = False
+  ReloadOptionRoms = False
+  RequestBootVarRouting = True
+  ResizeGpuBars = -1
+  TscSyncTimeout = 0
+  UnblockFsConnect = False

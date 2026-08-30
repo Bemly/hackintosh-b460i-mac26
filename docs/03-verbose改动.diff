@@ -1,0 +1,22 @@
+1139c1139
+< 			<false/>
+---
+> 			<true/>
+1141c1141
+< 			<false/>
+---
+> 			<true/>
+1153c1153
+< 			<integer>0</integer>
+---
+> 			<integer>67</integer>
+1321c1321
+< 				<string>agdpmod=pikera keepsyms=1 debug=0x100</string>
+---
+> 				<string>-v agdpmod=pikera keepsyms=1 debug=0x100</string>
+1588a1589,1590
+> 			<false/>
+> 			<key>GopBurstMode</key>
+1677a1680,1681
+> 			<key>ResizeUsePciRbIo</key>
+> 			<false/>
