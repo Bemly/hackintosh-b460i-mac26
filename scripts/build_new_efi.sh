@@ -37,9 +37,10 @@ cp -R "$STG/AppleALC-1.9.7/AppleALC.kext" "$OUT/OC/Kexts/"
 cp -R "$STG/NVMeFix-1.1.3/NVMeFix.kext" "$OUT/OC/Kexts/"
 cp -R "$STG/CPUFriend-1.3.0/CPUFriend.kext" "$OUT/OC/Kexts/"
 cp -R "$STG/itlwm-v2.3.0-stable/itlwm.kext" "$OUT/OC/Kexts/"
-cp -R "$STG/IntelBluetooth-v2.4.0/IntelBluetoothFirmware.kext" "$OUT/OC/Kexts/"
-cp -R "$STG/IntelBluetooth-v2.4.0/IntelBTPatcher.kext" "$OUT/OC/Kexts/"
+cp -R "$STG/IntelBluetooth-2.5.1/IntelBluetoothFirmware.kext" "$OUT/OC/Kexts/"
+cp -R "$STG/IntelBluetooth-2.5.1/IntelBTPatcher.kext" "$OUT/OC/Kexts/"
 cp -R "$STG/BrcmPatchRAM-2.7.2/BlueToolFixup.kext" "$OUT/OC/Kexts/"
+cp -R "$STG/RestrictEvents-1.1.6/RestrictEvents.kext" "$OUT/OC/Kexts/"
 cp -R "$STG/RealtekRTL8111-V3.0.0/RealtekRTL8111-V3.0.0/Release/RealtekRTL8111.kext" "$OUT/OC/Kexts/"
 
 # 6) Kexts —— 沿用本机定制件（不可替换：端口映射/变频数据/显卡温度，无更新版本）

@@ -25,6 +25,7 @@ KEXT_ORDER = [
     'IntelBluetoothFirmware.kext',
     'IntelBTPatcher.kext',
     'BlueToolFixup.kext',
+    'RestrictEvents.kext',
     'RealtekRTL8111.kext',
     'RadeonSensor.kext',
     'SMCRadeonGPU.kext',
@@ -41,9 +42,10 @@ KEXT_COMMENT = {
     'CPUFriendDataProvider.kext': 'local CPUFriend data profile',
     'NVMeFix.kext': 'v1.1.3 NVMe fixes',
     'itlwm.kext': 'v2.3.0 Intel AX200 WiFi (use with HeliPort)',
-    'IntelBluetoothFirmware.kext': 'v2.4.0 AX200 BT firmware',
-    'IntelBTPatcher.kext': 'v2.4.0 Intel BT patcher',
+    'IntelBluetoothFirmware.kext': 'v2.5.1 AX200 BT firmware (Tahoe fork)',
+    'IntelBTPatcher.kext': 'v2.5.1 Intel BT patcher (Tahoe fork)',
     'BlueToolFixup.kext': 'v2.7.2 BT fix for Monterey+',
+    'RestrictEvents.kext': 'v1.1.6 OTA with revpatch=sbvmm',
     'RealtekRTL8111.kext': 'v3.0.0 RTL8111 (Tahoe AppleVTD)',
     'RadeonSensor.kext': 'v0.3.3 RX6800 temp',
     'SMCRadeonGPU.kext': 'v0.3.3 RX6800 GPU sensor',
@@ -143,11 +145,16 @@ def main(old_p, sample_p, efi_dir, out_p):
     old['Misc']['Debug']['Target'] = 67
     old['Misc']['Debug']['DisableWatchDog'] = True
 
-    # 6) boot-args 带 -v（保留既有参数，去重）
+    # 6) boot-args：-v 跑码 + Tahoe 必需参数（-ibtcompatbeta 蓝牙、revpatch=sbvmm OTA）
     nv = old['NVRAM']['Add']['7C436110-AB2A-4BBB-A880-FE41995C9F82']
+    required = ['-v', '-ibtcompatbeta', 'revpatch=sbvmm']
     args = (nv.get('boot-args') or '').split()
-    args = [a for a in args if a != '-v']
-    nv['boot-args'] = ' '.join(['-v'] + args)
+    args = [a for a in args if a not in required]
+    nv['boot-args'] = ' '.join(required + args)
+
+    # 6.1) Intel 蓝牙在 Monterey+ 所需的 NVRAM 标记（防止系统按第三方 dongle 关闭内置蓝牙）
+    nv['bluetoothExternalDongleFailed'] = bytes([0])
+    nv['bluetoothInternalControllerInfo'] = bytes(16)
 
     # 7) SecureBootModel 关闭（Tahoe 升级期最稳，与上游 4.0.0 一致）
     old['Misc']['Security']['SecureBootModel'] = 'Disabled'

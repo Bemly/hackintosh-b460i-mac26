@@ -52,10 +52,11 @@
   10. [x] IntelBluetoothFirmware.kext                   MinK=           MaxK= ExecPath=Contents/MacOS/IntelBluetoothFirmware
   11. [x] IntelBTPatcher.kext                           MinK=           MaxK= ExecPath=Contents/MacOS/IntelBTPatcher
   12. [x] BlueToolFixup.kext                            MinK=           MaxK= ExecPath=Contents/MacOS/BlueToolFixup
-  13. [x] RealtekRTL8111.kext                           MinK=           MaxK= ExecPath=Contents/MacOS/RealtekRTL8111
-  14. [x] RadeonSensor.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/RadeonSensor
-  15. [x] SMCRadeonGPU.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/SMCRadeonGPU
-  16. [x] USBPorts.kext                                 MinK=           MaxK= ExecPath=
+  13. [x] RestrictEvents.kext                           MinK=           MaxK= ExecPath=Contents/MacOS/RestrictEvents
+  14. [x] RealtekRTL8111.kext                           MinK=           MaxK= ExecPath=Contents/MacOS/RealtekRTL8111
+  15. [x] RadeonSensor.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/RadeonSensor
+  16. [x] SMCRadeonGPU.kext                             MinK=           MaxK= ExecPath=Contents/MacOS/SMCRadeonGPU
+  17. [x] USBPorts.kext                                 MinK=           MaxK= ExecPath=
 ## Kernel/Quirks
   AppleCpuPmCfgLock = False
   AppleXcpmCfgLock = False
@@ -128,7 +129,9 @@
   GUID 7C436110-AB2A-4BBB-A880-FE41995C9F82
      ForceDisplayRotationInEFI = 0
      SystemAudioVolume = <46>
-     boot-args = -v agdpmod=pikera keepsyms=1 debug=0x100
+     bluetoothExternalDongleFailed = <00>
+     bluetoothInternalControllerInfo = <00000000000000000000000000000000>
+     boot-args = -v -ibtcompatbeta revpatch=sbvmm agdpmod=pikera keepsyms=1 debug=0x100
      csr-active-config = <03000000>
      prev-lang:kbd = zh-Hans:252
      run-efi-updater = No
