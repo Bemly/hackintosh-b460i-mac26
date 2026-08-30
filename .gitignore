@@ -8,3 +8,7 @@ efi-backup/original-20260830/com.apple.recovery.boot/
 # 工具与上游仓库(另行管理)
 tools/_downloads/
 upstream/
+# 引导工具二进制/第三方仓库(可按 tools/README.md 重新获取，不入库)
+tools/ProperTree/
+tools/oc-0.9.1/
+tools/oc-1.0.7/
