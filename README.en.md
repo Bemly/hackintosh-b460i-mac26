@@ -55,6 +55,19 @@ Hackintosh workspace for a Colorful B460I + i5-10400 + RX 6800 build: migrated f
 - Disable Re-Size BAR in BIOS, or lock PCIe to Gen3 (hardware-level memory-training compatibility, residual probability unrelated to the EFI).
 - The macOS 13-era EFI baseline remains in-repo: `efi-backup/original-20260830/`.
 
+### Before You Use This EFI (Important)
+
+The `PlatformInfo → Generic` entries in the committed configs are placeholders (scrubbed for privacy) — **booting with them as-is will misbehave**. Fill in your own before deploying:
+
+1. **Generate your own SMBIOS** with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) (or OpenCore Auxiliary Tools), model **iMac20,1** (matches i5-10400 + B460), and fill in `SystemSerialNumber`, `SystemUUID`, `MLB`.
+2. **ROM**: use your own wired/Wi-Fi card MAC address (base64, 6 bytes).
+3. **Deploy**: mount the target ESP (`diskutil mount diskXs1`) and copy `efi-new/tahoe-oc107/EFI` to the ESP root. If you edited the config, run `tools/oc-1.0.7/Utilities/ocvalidate/ocvalidate` first — deploy only with zero issues.
+4. **BIOS**: this machine sets `ResizeAppleGpuBars=8` in the config because of the RX 6800 GDDR6 training panic; adjust the value for your GPU's VRAM or disable Re-Size BAR in BIOS.
+5. **WiFi/BT**: Intel AX200 — WiFi via itlwm (with `HeliPort.app`, see `efi-new/companion/`), Bluetooth via IntelBluetoothFirmware (already in the EFI).
+6. **Debug switches**: `-v` (verbose), `Target=67` (OC logs on the ESP), `ApplePanic`, and `debug=0x100` are all ON; turn them off for daily use.
+
+> Note: the machine's internal/USB ESPs run a config with real identifiers (required for normal boot); the repo copy is the scrubbed placeholder version — identical in every other respect.
+
 ## Repository Layout
 
 ```
@@ -63,7 +76,7 @@ hackintosh-b460i-mac26/
 ├── AGENT_README.md                   # Onboarding guide for the handover USB's diagnostic agent
 ├── hardware/01-硬件清单.md            # Full hardware inventory
 ├── efi-backup/original-20260830/     # Read-only baseline of the macOS 13-era EFI (rollback)
-├── efi-new/tahoe-oc107/EFI/          # ★ Live EFI source (= internal ESP = USB ESP)
+├── efi-new/tahoe-oc107/EFI/          # ★ Live EFI source (= internal ESP = USB ESP; PlatformInfo placeholders, see above)
 │   └── companion/HeliPort-v1.5.0.dmg # AX200 WiFi utility
 ├── docs/                             # 02-08: config exports/diff/upgrade assessment/EFI notes/install guide/handover manual
 ├── diagnostics/                      # Black-screen forensics archive

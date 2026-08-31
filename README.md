@@ -55,6 +55,19 @@
 - 进 BIOS 关闭 Re-Size BAR，或将 PCIe 锁 Gen3（硬件级显存训练兼容性，与 EFI 无关的残余概率）。
 - 引导基线仍在仓库：`efi-backup/original-20260830/`（macOS 13 时代完整 EFI）。
 
+### 克隆使用前必做（重要）
+
+仓库内 config 的 `PlatformInfo → Generic` 四项已替换为占位符（本机隐私脱敏），**直接拿去引导会出问题**，部署前必须自行补齐：
+
+1. **生成自己的 SMBIOS**：用 [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)（或 OpenCore Auxiliary Tools）生成，机型选 **iMac20,1**（对应 i5-10400 + B460），填入 `SystemSerialNumber`、`SystemUUID`、`MLB`。
+2. **ROM**：填你自己有线/无线网卡的 MAC 地址（base64 格式，6 字节）。
+3. **部署**：挂载目标盘 ESP（`diskutil mount diskXs1`），把 `efi-new/tahoe-oc107/EFI` 拷到 ESP 根目录；改动过 config 先跑 `tools/oc-1.0.7/Utilities/ocvalidate/ocvalidate`，零问题再上。
+4. **BIOS**：本机因 RX 6800 GDDR6 训练 panic 设了 `ResizeAppleGpuBars=8`（config 内）；显卡显存不同请按需调整该值，或在 BIOS 直接关闭 Re-Size BAR。
+5. **WiFi/蓝牙**：Intel AX200，WiFi 走 itlwm（配套 `HeliPort.app`，见 `efi-new/companion/`），蓝牙走 IntelBluetoothFirmware（已随 EFI）。
+6. **调试开关**：`-v`（verbose 跑码）、`Target=67`（OC 日志落 ESP）、`ApplePanic`、`debug=0x100` 均为开启状态，日常使用建议关闭以加快开机。
+
+> 说明：本机内置盘/U盘 ESP 上跑的是真实标识的 config（机器要正常引导），仓库副本是脱敏占位符版本——两者除 PlatformInfo 外完全一致。
+
 ## 目录结构
 
 ```
@@ -63,7 +76,7 @@ hackintosh-b460i-mac26/
 ├── AGENT_README.md                   # 交接 U盘用：外部诊断 Agent 上手指南
 ├── hardware/01-硬件清单.md            # 硬件型号/ID/驱动方式总表
 ├── efi-backup/original-20260830/     # macOS13 时代 EFI 完整只读基线（回滚用）
-├── efi-new/tahoe-oc107/EFI/          # ★ 现役 EFI 源（= 内置盘 ESP = U盘 ESP）
+├── efi-new/tahoe-oc107/EFI/          # ★ 现役 EFI 源（= 内置盘 ESP = U盘 ESP；PlatformInfo 为占位符，见上节）
 │   └── companion/HeliPort-v1.5.0.dmg # AX200 WiFi 连接工具
 ├── docs/                             # 02-08：config 导出/diff/升级评估/EFI 说明/装机步骤/交接手册
 ├── diagnostics/                      # 黑屏取证档案
