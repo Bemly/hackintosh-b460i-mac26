@@ -12,3 +12,7 @@ upstream/
 tools/ProperTree/
 tools/oc-0.9.1/
 tools/oc-1.0.7/
+
+# 会话工具本地目录，与本仓库无关
+.v2c/
+.video_agent/

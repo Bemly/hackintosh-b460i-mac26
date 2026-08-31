@@ -1,50 +1,88 @@
 # hackintosh-b460i-mac26
 
-七彩虹 B460I + i5-10400 + RX6800 黑苹果：现网 EFI 备份、macOS 15 黑屏复盘、macOS 26 (Tahoe) 升级评估与引导改造工作区。所有改动均提交 git。
+七彩虹 B460I + i5-10400 + RX 6800 黑苹果工作区：从 macOS 13 迁移到 **macOS 26 Tahoe (26.6.2 / 25G83)**，并根治了"开机有概率黑屏卡死"问题。[English](README.en.md)
+
+> 2026-08-31 更新：黑屏问题已根治。现网运行 macOS Tahoe 26.6.2，引导 OpenCore **1.0.7**，内置盘与 U盘 ESP 均为同一套新 EFI，多次重启验证 100% 成功。
+
+## 机器配置
+
+| 部件 | 型号 |
+|---|---|
+| 主板 | 七彩虹 B460I GAMING (mini-ITX) |
+| CPU | Intel i5-10400 (Comet Lake) |
+| GPU | AMD Radeon RX 6800 16GB (Navi 21) |
+| WiFi/BT | Intel AX200 |
+| 系统 | macOS Tahoe 26.6.2 (25G83) |
+| 引导 | OpenCore 1.0.7 |
+
+## 问题：开机有概率黑屏卡死
+
+**现象**：开机 verbose 跑约 35 秒后画面消失，机器挂住不重启；有时又能正常进系统。断电重开可复现，与冷热无关。
+
+**诊断过程**（详见 [diagnostics/findings.md](diagnostics/findings.md)）：
+
+1. 挂载内置盘与 U盘两块 ESP，采集全部 OpenCore 日志（13 + 7 份）、NVRAM 全量导出、54 份 DiagnosticReports，并把 4 份内核 panic 解码全文。
+2. 发现所有 OC 日志都正常止于 `EXITBS:START`——OC 引导阶段没问题，故障在**内核阶段**。
+3. 关键证据链：**4 次 panic 全部发生在走内置盘旧 EFI（OC 0.9.1）的开机，6 次成功全部走 U盘新 EFI（OC 1.0.7）**——故障与引导哪套 EFI 强相关。
+4. 解码 panic 回溯实锤根因：
+   ```
+   AMDRadeonX6000_AmdRadeonControllerNavi2::start
+     → doGddr6LongTraining → doGPUPanic → panic
+   ```
+   即 **RX 6800 (Navi 21) GDDR6 显存长训练失败**。`debug=0x100` 让 panic 停住不重启，而此时屏幕尚未点亮，所以表现为"黑屏挂死"。
+
+### 发现的问题清单
+
+| # | 问题 | 定性 |
+|---|---|---|
+| 1 | 内置盘 ESP 仍是旧 Ventura EFI（OC 0.9.1 / Lilu 1.6.4 / WEG 1.6.4 / SecureBootModel=j185f），与 U盘新 EFI 并存，选错引导路径即触发 GDDR6 训练 panic | **根因** |
+| 2 | 多份文档承诺 `ResizeAppleGpuBars=0`，但实际三份 config 均无此键，而 BIOS Re-Size BAR 开启——Navi 显卡训练 panic 的已知风险因子 | 已修复 |
+| 3 | panic 回传变量 `aapl,panic-info` 为空（macOS 26 改存 `AAPL,PanicInfo000K`），取证脚本需按新变量取 | 已适配 |
+| 4 | bluetoothd 反复 EXC_GUARD 崩溃（50+ 次/日，Intel 蓝牙固件握手异常） | 非致命，观察中 |
+| 5 | 一次 shutdown_stall（关机卡住被强断） | 偶发，与黑屏无关 |
+| 6 | 挂载/写 ESP 需管理员授权，`sudo -n` 不可行，需 osascript GUI 授权 | 环境约束 |
+
+## 解决方案（已全部实施）
+
+1. **内置盘 ESP 回填 OC 1.0.7 新 EFI**：`efi-new/tahoe-oc107/EFI` 经 ocvalidate 零问题后 `ditto` 部署到 disk0s1，与 U盘 ESP `diff -rq` 完全一致；旧 EFI 备份经机主确认后删除。"选错引导路径就黑屏"的隐患随之消除。
+2. **`NVRAM → Add → 7C43…9F82 → ResizeAppleGpuBars = 8`**：机主选定 8GB BAR（匹配 RX 6800 的 16G 显存），已写入仓库/内置盘/U盘三处 config 并同步进生成脚本 `scripts/build_tahoe_config.py`，`ocvalidate 1.0.7` 零问题。该值在重启时由 OC 写入 NVRAM 生效。
+3. **保留完整可观测性**：`-v` 跑码、`ApplePanic`、`Target=67`（OC 日志落 ESP 根）、`debug=0x100`、`agdpmod=pikera`、`-ibtcompatbeta revpatch=sbvmm`（Tahoe 蓝牙/OTA）。
+
+**验证结果**：替换后多次重启，全部从内置盘新 EFI 引导，无一次黑屏/panic。
+
+### 若复发 GDDR6 训练 panic（回退预案）
+
+- 进 BIOS 关闭 Re-Size BAR，或将 PCIe 锁 Gen3（硬件级显存训练兼容性，与 EFI 无关的残余概率）。
+- 引导基线仍在仓库：`efi-backup/original-20260830/`（macOS 13 时代完整 EFI）。
 
 ## 目录结构
 
 ```
 hackintosh-b460i-mac26/
-├── hardware/01-硬件清单.md            # 本机全部硬件型号/ID/驱动方式总表
-├── efi-backup/original-20260830/     # 现网 EFI 完整只读基线（=上游 3.3.0/2023-05-15 + 本机改动）
-├── efi-work/verbose-20260830/        # verbose 跑码工作副本（已部署到 EFI）
-│   ├── EFI/                          # 实际部署的 EFI 内容
-│   └── deploy前-config.plist.*.bak   # 部署前从 EFI 取回的原始 config
-├── efi-new/
-│   ├── tahoe-oc107/EFI/              # ★ macOS26 全新 EFI：OC 1.0.7 + 18 最新 kext（交付物，已入库）
-│   └── companion/HeliPort-v1.5.0.dmg # ★ AX200 WiFi 连接工具（进系统后安装）
-├── docs/
-│   ├── 02-config-原始配置全量.txt     # 现网 config 全量关键项导出
-│   ├── 03-verbose改动.diff           # 本次 config 逐行 diff
-│   ├── 04-macOS26升级评估与排查方案.md # 核心报告：黑屏根因 + 26 兼容性 + 升级路线
-│   ├── 05-tahoe新config全量.txt       # 全新 OC1.0.7 config 全量关键项导出
-│   └── 06-Tahoe全新EFI说明.md         # ★ 新 EFI 组件/参数/WiFi/音频/风险/升级步骤
-├── scripts/
-│   ├── analyze_config.py             # config.plist 关键项导出工具
-│   ├── patch_verbose.py              # -v/调试开关补丁脚本（可复现）
-│   ├── build_new_efi.sh              # 组装 Tahoe 全新 EFI 文件树（可复现）
-│   └── build_tahoe_config.py         # 生成 1.0.7 schema config（可复现）
-├── tools/                            # OC 0.9.1/1.0.7、ProperTree（二进制不入库，见 tools/README.md）
-└── upstream/                         # 上游仓库与 3.3.0/4.0.0 Release（不入库）
+├── README.md / README.en.md          # 本文件（中/英）
+├── AGENT_README.md                   # 交接 U盘用：外部诊断 Agent 上手指南
+├── hardware/01-硬件清单.md            # 硬件型号/ID/驱动方式总表
+├── efi-backup/original-20260830/     # macOS13 时代 EFI 完整只读基线（回滚用）
+├── efi-new/tahoe-oc107/EFI/          # ★ 现役 EFI 源（= 内置盘 ESP = U盘 ESP）
+│   └── companion/HeliPort-v1.5.0.dmg # AX200 WiFi 连接工具
+├── docs/                             # 02-08：config 导出/diff/升级评估/EFI 说明/装机步骤/交接手册
+├── diagnostics/                      # 黑屏取证档案
+│   ├── findings.md                   # ★ 三轮诊断记录（根因/改动/验证）
+│   ├── opencore/                     # 双 ESP 的 OC 日志（from-usb 13 份 / from-internal 7 份）
+│   ├── nvram/                        # NVRAM 全量导出
+│   ├── panic/                        # 54 份 DiagnosticReports + 4 份 panic 解码全文
+│   └── sysdiagnose/                  # 系统诊断包
+├── scripts/                          # config 分析/补丁/构建脚本（全部可复现）
+└── tools/                            # OC 0.9.1/1.0.7、ProperTree（二进制不入库）
 ```
 
-## 当前状态（2026-08-30）
+## 相关文档
 
-- 现网：macOS 13.7.8 + OpenCore 0.9.1（上游 2023-05-15 版，已开 verbose 跑码），运行正常。
-- 已完成：EFI 完整备份入库；硬件清单；与上游逐文件对比；现网 EFI 改 verbose 跑码并部署。
-- **已交付 Tahoe 全新 EFI**：`efi-new/tahoe-oc107/EFI`（OC 1.0.7 + 18 个最新 kext，-v/ApplePanic/Target67/SecureBootModel Disabled，ocvalidate 1.0.7 零问题），仅入库**未部署**；WiFi 用 itlwm+HeliPort（HeliPort 已在当前系统装好验证）。详见 `docs/06`。
-- 结论：硬件本身兼容 Tahoe；旧 EFI 直接升必黑屏（OC/kext 落后），新 EFI 即为解决方案。升级前务必先 U 盘验证（docs/06 §8）。
+- [docs/06-Tahoe全新EFI说明.md](docs/06-Tahoe全新EFI说明.md) — 新 EFI 组件/参数/风险
+- [docs/07-全新安装macOS26完整步骤.md](docs/07-全新安装macOS26完整步骤.md) — 装机全流程
+- [diagnostics/findings.md](diagnostics/findings.md) — 黑屏三轮诊断记录
+- [docs/08-外部诊断Agent交接手册.md](docs/08-外部诊断Agent交接手册.md) — 取证规范与判定树
 
-## 紧急回滚（恢复 logo 开机）
+## Git 约定
 
-```bash
-sudo diskutil mount disk0s1
-# 用 EFI 内就地备份覆盖回去：
-cp /Volumes/Untitled/EFI/OC/config.plist.bak-before-verbose /Volumes/Untitled/EFI/OC/config.plist
-sudo diskutil unmount disk0s1
-```
-
-## Git 提交约定
-
-每次修改一次 commit：备份基线 → 文档/分析 → 工作副本 → 部署记录，可逐阶段回溯。
+改动即 commit（诊断分轮提交：`b25ce79` 取证 → `437a0d5` EFI 回填 → `bc4a6af` ResizeAppleGpuBars），可逐阶段回溯。注意：`diagnostics/` 内含机器序列号等隐私，**本仓库保持私有**，若要转公开需先清洗该目录。
