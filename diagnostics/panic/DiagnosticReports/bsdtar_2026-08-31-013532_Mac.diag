@@ -1,0 +1,628 @@
+Date/Time:        2026-08-31 01:31:04.540 +0800
+End time:         2026-08-31 01:35:27.908 +0800
+OS Version:       macOS 26.6.2 (Build 25G83)
+Architecture:     x86_64h
+Report Version:   72
+Incident Identifier: 1BFB2404-73C1-4349-8687-CFEA4A1D9F6C
+Share With Devs:  Yes
+
+Data Source:      Microstackshots
+Shared Cache:     F25A411F-0E2B-394F-861B-412F1A52F90D slid base address 0x7ff805c04000, slide 0x5c04000
+
+Command:          bsdtar
+Path:             /usr/bin/bsdtar
+Codesigning ID:   com.apple.bsdtar
+Resource Coalition: "com.openai.codex"(5973)
+Architecture:     x86_64
+Parent:           ChatGPT [15696]
+PID:              15887
+
+Event:            disk writes
+Action taken:     none
+Writes:           2147.54 MB of file backed memory dirtied over 263 seconds (8154.14 KB per second average), exceeding limit of 24.86 KB per second over 86400 seconds
+Writes limit:     2147.48 MB
+Limit duration:   86400s
+Writes caused:    2147.54 MB
+Writes duration:  263s
+Duration:         263.37s
+Duration Sampled: 260.49s (event starts 2.87s before samples)
+Steps:            504 (10.49 MB/step)
+
+Hardware model:   iMac20,1
+Active cpus:      12
+Memory size:      16 GB
+HW page size:     4096
+VM page size:     4096
+Shared cache residency: 10.72% (592.71 MB / 5528.70 MB)
+Boot args:        -v -ibtcompatbeta revpatch=sbvmm agdpmod=pikera keepsyms=1 debug=0x100
+
+Time Since Boot:  11871s
+Time Awake Since Boot: 11871s
+Time Since Wake:  n/a (machine hasn't slept)
+
+Total CPU Time:   50.992s
+Advisory levels:  Battery -> 3, User -> 2, ThermalPressure -> 0, Combined -> 2
+Free disk space:  895.16 GB/945.87 GB, low space threshold 3072 MB
+Vnodes Available: 72.98% (192057/263168)
+Models:           none
+
+Preferred User Language: zh-Hans-CN
+Country Code:     CN
+Keyboards:        ABC
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  35  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+  35  main + 8932 (bsdtar + 12484) [0x1032b50c4]
+  35  tar_mode_x + 112 (bsdtar + 18832) [0x1032b6990]
+  35  read_archive + 2213 (bsdtar + 18101) [0x1032b66b5]
+  35  archive_read_extract2 + 164 (libarchive.2.dylib + 752772) [0x7ff818bbec84]
+  35  copy_data + 130 (libarchive.2.dylib + 752994) [0x7ff818bbed62]
+  35  archive_write_data_block + 113 (libarchive.2.dylib + 614401) [0x7ff818b9d001]
+  35  _archive_write_disk_data_block + 157 (libarchive.2.dylib + 183037) [0x7ff818b33afd]
+  35  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+
+
+Powerstats for:   bsdtar [15887]
+UUID:             665F9A2B-5385-3DB9-AB57-02451C05052F
+Path:             /usr/bin/bsdtar
+Codesigning ID:   com.apple.bsdtar
+Resource Coalition: 35 samples "com.openai.codex"(5973)
+Architecture:     x86_64
+Parent:           ChatGPT [15696]
+UID:              501
+Footprint:        3160 KB -> 9516 KB (+6356 KB)
+Start time:       2026-08-31 01:35:22.449 +0800
+End time:         2026-08-31 01:35:27.903 +0800
+Num samples:      35 (7%)
+Num threads:      1
+Primary state:    35 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 35 samples Active
+Power Source:     0 samples on Battery, 35 samples on AC
+  35  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    35  main + 8932 (bsdtar + 12484) [0x1032b50c4]
+      35  tar_mode_x + 112 (bsdtar + 18832) [0x1032b6990]
+        35  read_archive + 2213 (bsdtar + 18101) [0x1032b66b5]
+          35  archive_read_extract2 + 164 (libarchive.2.dylib + 752772) [0x7ff818bbec84]
+            35  copy_data + 130 (libarchive.2.dylib + 752994) [0x7ff818bbed62]
+              35  archive_write_data_block + 113 (libarchive.2.dylib + 614401) [0x7ff818b9d001]
+                35  _archive_write_disk_data_block + 157 (libarchive.2.dylib + 183037) [0x7ff818b33afd]
+                  35  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+
+  Binary Images:
+           0x1032b2000 -        0x1032bffff  bsdtar (167.160.4)                    <665F9A2B-5385-3DB9-AB57-02451C05052F>  /usr/bin/bsdtar
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                           <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14) <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff818b07000 -     0x7ff818be2287  libarchive.2.dylib (167.160.4)        <48E2D0D6-E76C-3F05-B808-4C140AD7D28D>  /usr/lib/libarchive.2.dylib
+
+
+Powerstats for:   ChatGPT
+UUID:             4C4C44FF-5555-3144-A18B-CC89CCBD5C9D
+Path:             /Applications/ChatGPT.app/Contents/MacOS/ChatGPT
+Identifier:       com.openai.codex
+Version:          26.825.51511 (7377)
+Team ID:          2DC432GLL2
+Is First Party:   No
+Beta Identifier:  8ADF8919-926F-5D0A-B65D-E37A944464B7
+Resource Coalition: 115 samples "com.openai.codex"(5973)
+Architecture:     x86_64
+Pageins:          4945 pages
+Start time:       2026-08-31 01:32:29.044 +0800
+End time:         2026-08-31 01:35:12.470 +0800
+Num samples:      115 (23%)
+Primary state:    104 samples Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 115 samples Active
+Power Source:     0 samples on Battery, 115 samples on AC
+  106  thread_start + 15 (libsystem_pthread.dylib + 6191) [0x7ff808aa582f]
+    106  _pthread_start + 115 (libsystem_pthread.dylib + 23881) [0x7ff808aa9d49]
+      103  uv_cancel + 763 (Codex Framework + 86897259) [0x12121c26b]
+        73   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+        30   uv__fs_post + 5695 (Codex Framework + 86939183) [0x12122662f]
+          30   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+      2    v8::Isolate::SetMetricsRecorder(std::__Cr::shared_ptr<v8::metrics::Recorder> const&) + 159344 (Codex Framework + 12476624) [0x11cb230d0]
+        1    v8::Object::SetPrivate(v8::Local<v8::Context>, v8::Local<v8::Private>, v8::Local<v8::Value>) + 15744 (Codex Framework + 17990128) [0x11d0651f0]
+          1    v8::Object::SetPrivate(v8::Local<v8::Context>, v8::Local<v8::Private>, v8::Local<v8::Value>) + 16013 (Codex Framework + 17990397) [0x11d0652fd]
+            1    font_format_check$cxxbridge1$194$is_cbdt_cblc + 330270 (Codex Framework + 34468174) [0x11e01c14e]
+              1    v8::Script::ScriptId() const + 13156 (Codex Framework + 6434100) [0x11c55fd34]
+                1    v8::BackingStore::Data() const + 7408 (Codex Framework + 4604416) [0x11c3a1200]
+                  1    node::PrincipalRealm::inspector_disable_async_hooks() const + 296632 (Codex Framework + 6815000) [0x11c5bcd18]
+                    1    v8::Module::GetUnboundModuleScript() + 681714 (Codex Framework + 30757410) [0x11dc92222]
+                      1    v8::Module::GetUnboundModuleScript() + 682062 (Codex Framework + 30757758) [0x11dc9237e]
+                        1    v8::Module::GetUnboundModuleScript() + 682843 (Codex Framework + 30758539) [0x11dc9268b]
+                          1    v8::Module::GetUnboundModuleScript() + 684150 (Codex Framework + 30759846) [0x11dc92ba6]
+                            1    mkstemp + 51 (libsystem_c.dylib + 187402) [0x7ff808967c0a]
+                              1    find_temp_path + 365 (libsystem_c.dylib + 92463) [0x7ff80895092f]
+                                1    _mkostemps_action + 47 (libsystem_c.dylib + 137062) [0x7ff80895b766]
+                                  1    __openat_nocancel + 10 (libsystem_kernel.dylib + 21382) [0x7ff808a6a386]
+                                    1    <Effective Thread QoS Background, Requested Thread QoS Background>
+        1    rust_png$cxxbridge1$194$StreamWriter$write + 80429 (Codex Framework + 36346845) [0x11e1e6bdd]
+          1    rust_png$cxxbridge1$194$StreamWriter$write + 81096 (Codex Framework + 36347512) [0x11e1e6e78]
+            1    v8::String::Utf8Value::Utf8Value(v8::Isolate*, v8::Local<v8::Value>) + 60210 (Codex Framework + 19036834) [0x11d164aa2]
+              1    v8::String::Utf8Value::Utf8Value(v8::Isolate*, v8::Local<v8::Value>) + 61783 (Codex Framework + 19038407) [0x11d1650c7]
+                1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1694148 (Codex Framework + 65756644) [0x11fdf2de4]
+                  1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1615671 (Codex Framework + 65678167) [0x11fddfb57]
+                    1    v8::ScriptCompiler::CompileModule(v8::Local<v8::Context>, v8::ScriptCompiler::StreamedSource*, v8::Local<v8::String>, v8::ScriptOrigin const&) + 275274 (Codex Framework + 25767450) [0x11d7cfe1a]
+                      1    rust_png$cxxbridge1$194$Reader$get_plte_chunk + 20629 (Codex Framework + 54683733) [0x11f363855]
+                        1    cxxbridge1$box$rust_png$ResultOfStreamWriter$drop + 39207 (Codex Framework + 40213767) [0x11e596d07]
+                          1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                            1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+      1    node::worker::Worker::SelfSize() const + 146 (Codex Framework + 78885922) [0x120a78422]
+        1    node::worker::Worker::Run() + 6817 (Codex Framework + 140407777) [0x1245243e1]
+          1    node::SpinEventLoopInternal(node::Environment*) + 533 (Codex Framework + 76107397) [0x1207d1e85]
+            1    uv_run + 614 (Codex Framework + 86924534) [0x121222cf6]
+              1    uv__io_poll + 1875 (Codex Framework + 87015619) [0x1212390c3]
+                1    uv__async_fork + 803 (Codex Framework + 86922611) [0x121222573]
+                  1    uv__work_done + 179 (Codex Framework + 86896131) [0x12121be03]
+                    1    node::UDPWrap::SelfSize() const + 1245 (Codex Framework + 78972765) [0x120a8d75d]
+                      1    node::AsyncWrap::MakeCallback(v8::Local<v8::Function>, int, v8::Local<v8::Value>*) + 291 (Codex Framework + 76189203) [0x1207e5e13]
+                        1    node::InternalMakeCallback(node::Environment*, v8::Local<v8::Object>, v8::Local<v8::Object>, v8::Local<v8::Function>, int, v8::Local<v8::Value>*, node::async_context, v8::Local<v8::Value>) + 268 (Codex Framework + 76104076) [0x1207d118c]
+                          1    node::InternalCallbackScope::Close() + 738 (Codex Framework + 76103666) [0x1207d0ff2]
+                            1    v8::Function::Call(v8::Isolate*, v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) + 416 (Codex Framework + 5045056) [0x11c40cb40]
+                              1    v8::Context::Enter() + 347940 (Codex Framework + 1813732) [0x11c0f7ce4]
+                                1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5070475 (Codex Framework + 69132971) [0x12012b2ab]
+                                  1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5071164 (Codex Framework + 69133660) [0x12012b55c]
+                                    1    ??? [0x180481227]
+                                      1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                        1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                          1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                            1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091636 (Codex Framework + 69154132) [0x120130554]
+                                              1    ares_llist_replace_destructor + 1659408 (Codex Framework + 83958336) [0x120f4ea40]
+                                                1    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 984370 (Codex Framework + 75916770) [0x1207a35e2]
+                                                  1    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 993149 (Codex Framework + 75925549) [0x1207a582d]
+                                                    1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+  9    start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    9    main + 205 (ChatGPT + 2061) [0x10024480d]
+      9    ChromeMain + 682 (Codex Framework + 16426) [0x11bf4102a]
+        9    v8::Context::GetNumberOfEmbedderDataFields() + 237366 (Codex Framework + 38701270) [0x11e4258d6]
+          9    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1324745 (Codex Framework + 65387241) [0x11fd98ae9]
+            9    v8::Proxy::New(v8::Local<v8::Context>, v8::Local<v8::Object>, v8::Local<v8::Object>) + 56339 (Codex Framework + 43546483) [0x11e8c4773]
+              9    v8::Proxy::New(v8::Local<v8::Context>, v8::Local<v8::Object>, v8::Local<v8::Object>) + 57245 (Codex Framework + 43547389) [0x11e8c4afd]
+                9    v8::String::Utf8Value::Utf8Value(v8::Isolate*, v8::Local<v8::Value>) + 60210 (Codex Framework + 19036834) [0x11d164aa2]
+                  9    v8::String::Utf8Value::Utf8Value(v8::Isolate*, v8::Local<v8::Value>) + 61783 (Codex Framework + 19038407) [0x11d1650c7]
+                    9    v8::Isolate::Free(v8::Isolate*) + 794841 (Codex Framework + 47784089) [0x11eccf099]
+                      9    v8::internal::ThreadIsolation::UnregisterJitAllocationForTesting(unsigned long, unsigned long) + 103608 (Codex Framework + 49663272) [0x11ee99d28]
+                        9    -[NSApplication run] + 472 (AppKit + 190556) [0x7ff80c9d385c]
+                          9    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 2605273 (Codex Framework + 66667769) [0x11fed14f9]
+                            9    cppgc::internal::GlobalGCInfoTable::Initialize(v8::PageAllocator&) + 3834 (Codex Framework + 46954) [0x11bf4876a]
+                              9    uv_rwlock_wrlock + 723391 (Codex Framework + 85081343) [0x121060cff]
+                                9    -[NSApplication(NSEventRouting) nextEventMatchingMask:untilDate:inMode:dequeue:] + 67 (AppKit + 13547857) [0x7ff80d690951]
+                                  9    -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1265 (AppKit + 13549179) [0x7ff80d690e7b]
+                                    9    _DPSNextEvent + 800 (AppKit + 252357) [0x7ff80c9e29c5]
+                                      9    _DPSBlockUntilNextEventMatchingListInMode + 172 (AppKit + 7634836) [0x7ff80d0ecf94]
+                                        9    _BlockUntilNextEventMatchingListInMode + 37 (HIToolbox + 2298058) [0x7ff815a3a0ca]
+                                          9    ReceiveNextEventCommon + 599 (HIToolbox + 691277) [0x7ff8158b1c4d]
+                                            9    RunCurrentEventLoopInMode + 283 (HIToolbox + 678795) [0x7ff8158aeb8b]
+                                              9    _CFRunLoopRunSpecificWithOptions + 496 (CoreFoundation + 1323319) [0x7ff808c2c137]
+                                                9    __CFRunLoopRun + 916 (CoreFoundation + 503746) [0x7ff808b63fc2]
+                                                  9    __CFRunLoopDoSources0 + 203 (CoreFoundation + 508682) [0x7ff808b6530a]
+                                                    9    __CFRunLoopDoSource0 + 157 (CoreFoundation + 509258) [0x7ff808b6554a]
+                                                      9    __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17 (CoreFoundation + 509352) [0x7ff808b655a8]
+                                                        9    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1673535 (Codex Framework + 65736031) [0x11fdedd5f]
+                                                          9    cppgc::internal::GlobalGCInfoTable::Initialize(v8::PageAllocator&) + 3834 (Codex Framework + 46954) [0x11bf4876a]
+                                                            9    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1679349 (Codex Framework + 65741845) [0x11fdef415]
+                                                              9    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1615671 (Codex Framework + 65678167) [0x11fddfb57]
+                                                                6    v8::internal::OptimizingCompileTaskExecutor::EnsureStarted() + 277275 (Codex Framework + 22319851) [0x11d4862eb]
+                                                                  6    v8::Context::SetAlignedPointerInEmbedderData(int, void*, unsigned short) + 258047 (Codex Framework + 13167791) [0x11cbcbcaf]
+                                                                    6    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1787340 (Codex Framework + 65849836) [0x11fe099ec]
+                                                                      5    v8::Isolate::RemoveCallCompletedCallback(void (*)(v8::Isolate*)) + 17239 (Codex Framework + 9913879) [0x11c8b1617]
+                                                                        5    v8::ValueSerializer::~ValueSerializer() + 25301 (Codex Framework + 10769573) [0x11c9824a5]
+                                                                          5    v8::UnboundScript::GetScriptName() + 68104 (Codex Framework + 10318936) [0x11c914458]
+                                                                            5    v8::UnboundScript::GetScriptName() + 69220 (Codex Framework + 10320052) [0x11c9148b4]
+                                                                              5    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 379854 (Codex Framework + 75312254) [0x12070fc7e]
+                                                                                5    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 536355 (Codex Framework + 75468755) [0x120735fd3]
+                                                                                  5    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 399536 (Codex Framework + 75331936) [0x120714960]
+                                                                                    5    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 381345 (Codex Framework + 75313745) [0x120710251]
+                                                                                      5    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 538832 (Codex Framework + 75471232) [0x120736980]
+                                                                                        5    node::InternalMakeCallback(v8::Isolate*, v8::Local<v8::Object>, v8::Local<v8::Function>, int, v8::Local<v8::Value>*, node::async_context, v8::Local<v8::Value>) + 322 (Codex Framework + 76105490) [0x1207d1712]
+                                                                                          5    node::InternalMakeCallback(node::Environment*, v8::Local<v8::Object>, v8::Local<v8::Object>, v8::Local<v8::Function>, int, v8::Local<v8::Value>*, node::async_context, v8::Local<v8::Value>) + 268 (Codex Framework + 76104076) [0x1207d118c]
+                                                                                            5    node::InternalCallbackScope::Close() + 738 (Codex Framework + 76103666) [0x1207d0ff2]
+                                                                                              5    v8::Function::Call(v8::Isolate*, v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) + 416 (Codex Framework + 5045056) [0x11c40cb40]
+                                                                                                5    v8::Context::Enter() + 347940 (Codex Framework + 1813732) [0x11c0f7ce4]
+                                                                                                  5    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5070475 (Codex Framework + 69132971) [0x12012b2ab]
+                                                                                                    5    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5071164 (Codex Framework + 69133660) [0x12012b55c]
+                                                                                                      2    ??? [0x18dd1fc44]
+                                                                                                        2    ??? [0x18d9d1cc0]
+                                                                                                          2    ??? [0x18d9d2343]
+                                                                                                            2    ??? [0x18d9cdc26]
+                                                                                                              2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091636 (Codex Framework + 69154132) [0x120130554]
+                                                                                                                2    ares_llist_replace_destructor + 1659408 (Codex Framework + 83958336) [0x120f4ea40]
+                                                                                                                  2    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 984370 (Codex Framework + 75916770) [0x1207a35e2]
+                                                                                                                    2    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 993149 (Codex Framework + 75925549) [0x1207a582d]
+                                                                                                                      2    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                                                        2    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                                                      2    ??? [0x18d9214e7]
+                                                                                                        2    ??? [0x18d9d1cc0]
+                                                                                                          2    ??? [0x18d9d2343]
+                                                                                                            2    ??? [0x18d9cdc26]
+                                                                                                              2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091636 (Codex Framework + 69154132) [0x120130554]
+                                                                                                                2    ares_llist_replace_destructor + 1659408 (Codex Framework + 83958336) [0x120f4ea40]
+                                                                                                                  2    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 984370 (Codex Framework + 75916770) [0x1207a35e2]
+                                                                                                                    2    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 993149 (Codex Framework + 75925549) [0x1207a582d]
+                                                                                                                      2    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                                                        2    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                                                      1    ??? [0x1801e07a7]
+                                                                                                        1    ??? [0x180267d00]
+                                                                                                          1    ??? [0x180268383]
+                                                                                                            1    ??? [0x180263c66]
+                                                                                                              1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091636 (Codex Framework + 69154132) [0x120130554]
+                                                                                                                1    ares_llist_replace_destructor + 1659408 (Codex Framework + 83958336) [0x120f4ea40]
+                                                                                                                  1    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 984370 (Codex Framework + 75916770) [0x1207a35e2]
+                                                                                                                    1    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 993149 (Codex Framework + 75925549) [0x1207a582d]
+                                                                                                                      1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                                                        1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                      1    v8::Isolate::RemoveCallCompletedCallback(void (*)(v8::Isolate*)) + 16656 (Codex Framework + 9913296) [0x11c8b13d0]
+                                                                        1    v8::ValueSerializer::~ValueSerializer() + 25301 (Codex Framework + 10769573) [0x11c9824a5]
+                                                                          1    v8_inspector::V8InspectorSession::canDispatchMethod(v8_inspector::StringView) + 10436 (Codex Framework + 15061556) [0x11cd9a234]
+                                                                            1    v8::DictionaryTemplate::NewInstance(v8::Local<v8::Context>, std::__Cr::span<v8::MaybeLocal<v8::Value>, 18446744073709551615ul>) + 74189 (Codex Framework + 26180173) [0x11d834a4d]
+                                                                              1    v8::DictionaryTemplate::NewInstance(v8::Local<v8::Context>, std::__Cr::span<v8::MaybeLocal<v8::Value>, 18446744073709551615ul>) + 74930 (Codex Framework + 26180914) [0x11d834d32]
+                                                                                1    node::profiler::V8HeapProfilerConnection::Start() + 32624140 (Codex Framework + 173087708) [0x12644ebdc]
+                                                                                  1    ares_llist_replace_destructor + 1763004 (Codex Framework + 84061932) [0x120f67eec]
+                                                                                    1    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 513916 (Codex Framework + 75446316) [0x12073082c]
+                                                                                      1    node::InternalCallbackScope::Close() + 738 (Codex Framework + 76103666) [0x1207d0ff2]
+                                                                                        1    v8::Function::Call(v8::Isolate*, v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) + 416 (Codex Framework + 5045056) [0x11c40cb40]
+                                                                                          1    v8::Context::Enter() + 347940 (Codex Framework + 1813732) [0x11c0f7ce4]
+                                                                                            1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5070475 (Codex Framework + 69132971) [0x12012b2ab]
+                                                                                              1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5071164 (Codex Framework + 69133660) [0x12012b55c]
+                                                                                                1    ??? [0x1802798bc]
+                                                                                                  1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091898 (Codex Framework + 69154394) [0x12013065a]
+                                                                                                    1    v8::internal::OptimizingCompileInputQueue::Prioritize(v8::internal::Isolate*, v8::internal::Tagged<v8::internal::SharedFunctionInfo>) + 26001 (Codex Framework + 63635985) [0x11fbed211]
+                                                                                                      1    v8::internal::compiler::CompilationDependencies::DependOnArrayBufferMutableProtector() + 61954 (Codex Framework + 4683250) [0x11c3b45f2]
+                                                                                                        1    v8::Private::ForApi(v8::Isolate*, v8::Local<v8::String>) + 257792 (Codex Framework + 16581168) [0x11cf0d230]
+                                                                                                          1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5070987 (Codex Framework + 69133483) [0x12012b4ab]
+                                                                                                            1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5291977 (Codex Framework + 69354473) [0x1201613e9]
+                                                                                                              1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 6441098 (Codex Framework + 70503594) [0x120279caa]
+                                                                                                                1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5367438 (Codex Framework + 69429934) [0x120173aae]
+                                                                                                                  1    ??? [0x18054af9c]
+                                                                                                                    1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                                      1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                                        1    ??? [0x180507fd0]
+                                                                                                                          1    ??? [0x1805088f5]
+                                                                                                                            1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091636 (Codex Framework + 69154132) [0x120130554]
+                                                                                                                              1    Statement::JS_get(v8::FunctionCallbackInfo<v8::Value> const&) + 427 (better_sqlite3.node + 48715) [0x17eabae4b]
+                                                                                                                                1    sqlite3_step + 626 (better_sqlite3.node + 222754) [0x17eae5622]
+                                                                                                                                  1    sqlite3VdbeExec + 14899 (better_sqlite3.node + 1002403) [0x17eba3ba3]
+                                                                                                                                    1    sqlite3BtreeInsert + 2737 (better_sqlite3.node + 1055345) [0x17ebb0a71]
+                                                                                                                                      1    balance + 6693 (better_sqlite3.node + 1094645) [0x17ebba3f5]
+                                                                                                                                        1    subjournalPageIfRequired + 601 (better_sqlite3.node + 275225) [0x17eaf2319]
+                                                                                                                                          1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                                                                                                                            1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                2    v8::ArrayBufferView::Buffer() + 167855 (Codex Framework + 37799791) [0x11e34976f]
+                                                                  2    v8::DictionaryTemplate::NewInstance(v8::Local<v8::Context>, std::__Cr::span<v8::MaybeLocal<v8::Value>, 18446744073709551615ul>) + 74930 (Codex Framework + 26180914) [0x11d834d32]
+                                                                    2    node::profiler::V8HeapProfilerConnection::Start() + 32624140 (Codex Framework + 173087708) [0x12644ebdc]
+                                                                      2    ares_llist_replace_destructor + 1763004 (Codex Framework + 84061932) [0x120f67eec]
+                                                                        2    node::PrincipalRealm::primordials_safe_set_prototype_object() const + 513916 (Codex Framework + 75446316) [0x12073082c]
+                                                                          2    node::InternalCallbackScope::Close() + 738 (Codex Framework + 76103666) [0x1207d0ff2]
+                                                                            2    v8::Function::Call(v8::Isolate*, v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*) + 416 (Codex Framework + 5045056) [0x11c40cb40]
+                                                                              2    v8::Context::Enter() + 347940 (Codex Framework + 1813732) [0x11c0f7ce4]
+                                                                                2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5070475 (Codex Framework + 69132971) [0x12012b2ab]
+                                                                                  2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5071164 (Codex Framework + 69133660) [0x12012b55c]
+                                                                                    2    ??? [0x1802798bc]
+                                                                                      2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091898 (Codex Framework + 69154394) [0x12013065a]
+                                                                                        2    v8::internal::OptimizingCompileInputQueue::Prioritize(v8::internal::Isolate*, v8::internal::Tagged<v8::internal::SharedFunctionInfo>) + 26001 (Codex Framework + 63635985) [0x11fbed211]
+                                                                                          2    v8::internal::compiler::CompilationDependencies::DependOnArrayBufferMutableProtector() + 61954 (Codex Framework + 4683250) [0x11c3b45f2]
+                                                                                            2    v8::Private::ForApi(v8::Isolate*, v8::Local<v8::String>) + 257792 (Codex Framework + 16581168) [0x11cf0d230]
+                                                                                              2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5070987 (Codex Framework + 69133483) [0x12012b4ab]
+                                                                                                2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5291977 (Codex Framework + 69354473) [0x1201613e9]
+                                                                                                  2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 6441098 (Codex Framework + 70503594) [0x120279caa]
+                                                                                                    2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5367438 (Codex Framework + 69429934) [0x120173aae]
+                                                                                                      2    ??? [0x18054af9c]
+                                                                                                        2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                          2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                            2    ??? [0x180507fd0]
+                                                                                                              2    ??? [0x1805088f5]
+                                                                                                                2    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091636 (Codex Framework + 69154132) [0x120130554]
+                                                                                                                  2    Statement::JS_get(v8::FunctionCallbackInfo<v8::Value> const&) + 427 (better_sqlite3.node + 48715) [0x17eabae4b]
+                                                                                                                    2    sqlite3_step + 626 (better_sqlite3.node + 222754) [0x17eae5622]
+                                                                                                                      2    sqlite3VdbeExec + 14899 (better_sqlite3.node + 1002403) [0x17eba3ba3]
+                                                                                                                        2    sqlite3BtreeInsert + 2737 (better_sqlite3.node + 1055345) [0x17ebb0a71]
+                                                                                                                          1    balance + 6693 (better_sqlite3.node + 1094645) [0x17ebba3f5]
+                                                                                                                            1    subjournalPageIfRequired + 601 (better_sqlite3.node + 275225) [0x17eaf2319]
+                                                                                                                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                                                                                                                1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                                                                          1    balance + 492 (better_sqlite3.node + 1088444) [0x17ebb8bbc]
+                                                                                                                            1    subjournalPageIfRequired + 601 (better_sqlite3.node + 275225) [0x17eaf2319]
+                                                                                                                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                                                                                                                1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                1    ares_llist_replace_destructor + 13995 (Codex Framework + 82312923) [0x120dbcedb]
+                                                                  1    uv_run + 614 (Codex Framework + 86924534) [0x121222cf6]
+                                                                    1    uv__io_poll + 1875 (Codex Framework + 87015619) [0x1212390c3]
+                                                                      1    uv__async_fork + 803 (Codex Framework + 86922611) [0x121222573]
+                                                                        1    uv__work_done + 179 (Codex Framework + 86896131) [0x12121be03]
+                                                                          1    node::MakeLibuvRequestCallback<uv_fs_s, void (*)(uv_fs_s*)>::Wrapper(uv_fs_s*) + 192 (Codex Framework + 77385024) [0x120909d40]
+                                                                            1    node::fs::AfterNoArgs(uv_fs_s*) + 153 (Codex Framework + 77457033) [0x12091b689]
+                                                                              1    node::fs::FSReqPromise<node::AliasedBufferBase<long long, v8::BigInt64Array>>::SelfSize() const + 704 (Codex Framework + 77380592) [0x120908bf0]
+                                                                                1    node::InternalCallbackScope::Close() + 402 (Codex Framework + 76103330) [0x1207d0ea2]
+                                                                                  1    v8::internal::OptimizingCompileInputQueue::Prioritize(v8::internal::Isolate*, v8::internal::Tagged<v8::internal::SharedFunctionInfo>) + 26001 (Codex Framework + 63635985) [0x11fbed211]
+                                                                                    1    v8::internal::compiler::CompilationDependencies::DependOnArrayBufferMutableProtector() + 61954 (Codex Framework + 4683250) [0x11c3b45f2]
+                                                                                      1    v8::Private::ForApi(v8::Isolate*, v8::Local<v8::String>) + 257792 (Codex Framework + 16581168) [0x11cf0d230]
+                                                                                        1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5070987 (Codex Framework + 69133483) [0x12012b4ab]
+                                                                                          1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5291977 (Codex Framework + 69354473) [0x1201613e9]
+                                                                                            1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 6441098 (Codex Framework + 70503594) [0x120279caa]
+                                                                                              1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                  1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                    1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                      1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5084065 (Codex Framework + 69146561) [0x12012e7c1]
+                                                                                                        1    v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 5091636 (Codex Framework + 69154132) [0x120130554]
+                                                                                                          1    node::fs::RegisterExternalReferences(node::ExternalReferenceRegistry*) + 61344 (Codex Framework + 77543040) [0x120930680]
+                                                                                                            1    uv_fs_write + 281 (Codex Framework + 86948505) [0x121228a99]
+                                                                                                              1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                                                1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+
+  Binary Images:
+           0x100244000 -        0x100249fff  com.openai.codex 26.825.51511 (7377)                 <4C4C44FF-5555-3144-A18B-CC89CCBD5C9D>  /Applications/ChatGPT.app/Contents/MacOS/ChatGPT
+           0x11bf3d000 -        0x12caf3fff  com.openai.codex.framework 151.0.7922.174 (7922.174) <4C4C44E7-5555-3144-A1E8-20E118425550>  /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/151.0.7922.174/Codex Framework
+           0x17eaaf000 -        0x17ec73fff  better_sqlite3.node                                  <4BBBC4AF-B4C7-3530-8975-FE0B6827F3B5>  /Applications/ChatGPT.app/Contents/Resources/app.asar.unpacked/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                                          <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff80893a000 -     0x7ff8089c1e9f  libsystem_c.dylib (1752.160.4)                       <D8E26E42-0A43-3361-B0A8-B45C3BB10F19>  /usr/lib/system/libsystem_c.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)                <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff808aa4000 -     0x7ff808aafebf  libsystem_pthread.dylib (539.100.4)                  <A55CF178-EA25-3CC0-8BCD-A4209F2ACD1D>  /usr/lib/system/libsystem_pthread.dylib
+        0x7ff808ae9000 -     0x7ff808fa6714  com.apple.CoreFoundation 6.9 (5026.6.7)              <43436234-A738-3EBE-BD81-C7FBFF29035E>  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+        0x7ff80c9a5000 -     0x7ff80e1a1b16  com.apple.AppKit 6.9 (2685.70.101)                   <583BDB03-AA3D-3E8E-8F9B-FB919CDB5EFB>  /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+        0x7ff815809000 -     0x7ff815ae5bce  com.apple.HIToolbox 2.1.1 (1250.1)                   <064910B8-7724-3BE6-A40E-483AC18BA95E>  /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+
+
+Powerstats for:   bsdtar (other tasks)
+UUID:             665F9A2B-5385-3DB9-AB57-02451C05052F
+Path:             /usr/bin/bsdtar
+Codesigning ID:   com.apple.bsdtar
+Resource Coalition: 111 samples "com.apple.Terminal"(3194)
+Architecture:     x86_64
+Start time:       2026-08-31 01:31:53.170 +0800
+End time:         2026-08-31 01:32:30.773 +0800
+Num samples:      111 (22%)
+Primary state:    111 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 111 samples Active
+Power Source:     0 samples on Battery, 111 samples on AC
+  111  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    111  main + 8932 (bsdtar + 12484) [0x1015c00c4]
+      111  tar_mode_x + 112 (bsdtar + 18832) [0x1015c1990]
+        111  read_archive + 2213 (bsdtar + 18101) [0x1015c16b5]
+          111  archive_read_extract2 + 164 (libarchive.2.dylib + 752772) [0x7ff818bbec84]
+            111  copy_data + 130 (libarchive.2.dylib + 752994) [0x7ff818bbed62]
+              111  archive_write_data_block + 113 (libarchive.2.dylib + 614401) [0x7ff818b9d001]
+                111  _archive_write_disk_data_block + 157 (libarchive.2.dylib + 183037) [0x7ff818b33afd]
+                  111  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+
+  Binary Images:
+           0x1015bd000 -        0x1015cafff  bsdtar (167.160.4)                    <665F9A2B-5385-3DB9-AB57-02451C05052F>  /usr/bin/bsdtar
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                           <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14) <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff818b07000 -     0x7ff818be2287  libarchive.2.dylib (167.160.4)        <48E2D0D6-E76C-3F05-B808-4C140AD7D28D>  /usr/lib/libarchive.2.dylib
+
+
+Powerstats for:   ditto
+UUID:             49AF0BD3-1B39-379E-93E4-0D5494BCF278
+Path:             /usr/bin/ditto
+Resource Coalition: 71 samples "com.apple.Terminal"(3194), 9 samples "com.openai.codex"(5973)
+Architecture:     x86_64
+Pageins:          46 pages
+Start time:       2026-08-31 01:31:07.411 +0800
+End time:         2026-08-31 01:32:34.161 +0800
+Num samples:      80 (16%)
+Primary state:    80 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 80 samples Active
+Power Source:     0 samples on Battery, 80 samples on AC
+  80  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    80  ??? (ditto + 7395) [0x103bc8ce3]
+      80  BOMCopierCopyWithOptions + 1094 (Bom + 5594) [0x7ff81ab8d5da]
+        80  _BOMCopierCopyFromFilesystem + 2480 (Bom + 205945) [0x7ff81abbe479]
+          80  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+            80  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+              74  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                74  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                  73  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                    73  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                      58  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                        58  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                          55  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                            55  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                              37  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                37  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                  27  _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                    27  _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                      27  _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                        27  _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                          27  _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                            27  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                  10  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                    10  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                      7   _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                        7   _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                          6   _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                            6   _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                              5   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                                5   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                                  5   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                                    5   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                                      5   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                        5   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                              1   _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                                1   _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                                  1   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                                    1   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                                      1   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                                        1   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                                          1   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                            1   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                          1   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                            1   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                              1   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                                1   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                                  1   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                    1   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                      3   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                        3   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                          3   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                            3   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                              3   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                3   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                              18  _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                18  _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                  18  _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                    18  _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                      18  _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                        18  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                          3   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                            3   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                              3   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                3   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                  3   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                    3   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                      15  _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                        15  _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                          15  _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                            15  _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                              15  _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                15  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                  1   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                    1   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                      1   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                        1   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                          1   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                            1   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+              6   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                6   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                  6   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                    6   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                      6   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                        6   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+
+  Binary Images:
+           0x103bc7000 -                ???  ditto                                 <49AF0BD3-1B39-379E-93E4-0D5494BCF278>  /usr/bin/ditto
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                           <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14) <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff81ab8c000 -     0x7ff81ac082c7  com.apple.bom 14.0 (277)              <294A0B9C-8D6A-34FB-B03D-D7F7641C99BD>  /System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+
+
+Powerstats for:   curl
+UUID:             E0D21AED-4656-3F1A-8FAB-52F6D9FEE43A
+Path:             /usr/bin/curl
+Codesigning ID:   com.apple.curl
+Resource Coalition: 69 samples "com.apple.Terminal"(3194)
+Architecture:     x86_64
+Start time:       2026-08-31 01:31:22.262 +0800
+End time:         2026-08-31 01:35:23.205 +0800
+Num samples:      69 (14%)
+Primary state:    69 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 69 samples Active
+Power Source:     0 samples on Battery, 69 samples on AC
+  69  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    69  ??? (curl + 44032) [0x101b11c00]
+      69  ??? (curl + 45908) [0x101b12354]
+        69  ??? (curl + 47202) [0x101b12862]
+          69  curl_easy_perform + 303 (libcurl.4.dylib + 83687) [0x7ff825cfb6e7]
+            69  curl_multi_perform + 222 (libcurl.4.dylib + 240855) [0x7ff825d21cd7]
+              69  multi_runsingle + 2269 (libcurl.4.dylib + 243278) [0x7ff825d2264e]
+                69  Curl_readwrite + 409 (libcurl.4.dylib + 345484) [0x7ff825d3b58c]
+                  69  Curl_conn_recv + 42 (libcurl.4.dylib + 24856) [0x7ff825ced118]
+                    69  cf_h2_recv + 180 (libcurl.4.dylib + 165090) [0x7ff825d0f4e2]
+                      69  h2_progress_ingress + 364 (libcurl.4.dylib + 169454) [0x7ff825d105ee]
+                        69  h2_process_pending_input + 75 (libcurl.4.dylib + 178057) [0x7ff825d12789]
+                          69  nghttp2_session_mem_recv2 + 11777 (libapple_nghttp2.dylib + 64229) [0x7ff818c74ae5]
+                            69  on_data_chunk_recv + 114 (libcurl.4.dylib + 173679) [0x7ff825d1166f]
+                              69  Curl_xfer_write_resp + 54 (libcurl.4.dylib + 349710) [0x7ff825d3c60e]
+                                69  cw_download_write + 525 (libcurl.4.dylib + 278109) [0x7ff825d2ae5d]
+                                  67  cw_out_write + 74 (libcurl.4.dylib + 453906) [0x7ff825d55d12]
+                                    67  cw_out_do_write + 141 (libcurl.4.dylib + 454307) [0x7ff825d55ea3]
+                                      67  cw_out_ptr_flush + 214 (libcurl.4.dylib + 455070) [0x7ff825d5619e]
+                                        67  ??? (curl + 9676) [0x101b095cc]
+                                          67  fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                                            46  __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                                              46  __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                            21  __sfvwrite + 304 (libsystem_c.dylib + 23942) [0x7ff80893fd86]
+                                              21  __sflush + 96 (libsystem_c.dylib + 70850) [0x7ff80894b4c2]
+                                                21  __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                  2   inflate_stream + 195 (libcurl.4.dylib + 29243) [0x7ff825cee23b]
+                                    2   cw_out_write + 74 (libcurl.4.dylib + 453906) [0x7ff825d55d12]
+                                      2   cw_out_do_write + 141 (libcurl.4.dylib + 454307) [0x7ff825d55ea3]
+                                        2   cw_out_ptr_flush + 214 (libcurl.4.dylib + 455070) [0x7ff825d5619e]
+                                          2   ??? (curl + 9676) [0x101b095cc]
+                                            2   fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                                              2   __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                                                2   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+
+  Binary Images:
+           0x101b07000 -        0x101b3dfff  curl (168)                            <E0D21AED-4656-3F1A-8FAB-52F6D9FEE43A>  /usr/bin/curl
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                           <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff80893a000 -     0x7ff8089c1e9f  libsystem_c.dylib (1752.160.4)        <D8E26E42-0A43-3361-B0A8-B45C3BB10F19>  /usr/lib/system/libsystem_c.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14) <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff818c65000 -     0x7ff818c7e61f  libapple_nghttp2.dylib (37.120.3)     <3302EFEB-B389-34F5-96B4-C52161383EB5>  /usr/lib/libapple_nghttp2.dylib
+        0x7ff825ce7000 -     0x7ff825d6a05f  libcurl.4.dylib (168)                 <EBCEDFCF-EFC1-3530-9F4C-661060531834>  /usr/lib/libcurl.4.dylib
+
+
+Powerstats for:   Codex (Service) (Codex)
+UUID:             4C4C44FD-5555-3144-A122-233A5D810B50
+Path:             /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/151.0.7922.174/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)
+Identifier:       com.openai.codex.helper
+Version:          151.0.7922.174 (7922.174)
+Team ID:          2DC432GLL2
+Is First Party:   No
+Beta Identifier:  8ADF8919-926F-5D0A-B65D-E37A944464B7
+Resource Coalition: 38 samples "com.openai.codex"(5973)
+Architecture:     x86_64
+Pageins:          370 pages
+Start time:       2026-08-31 01:32:33.103 +0800
+End time:         2026-08-31 01:35:17.108 +0800
+Num samples:      38 (8%)
+Primary state:    37 samples Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 38 samples Active
+Power Source:     0 samples on Battery, 38 samples on AC
+  37  thread_start + 15 (libsystem_pthread.dylib + 6191) [0x7ff808aa582f]
+    37  _pthread_start + 115 (libsystem_pthread.dylib + 23881) [0x7ff808aa9d49]
+      37  v8::Isolate::SetMetricsRecorder(std::__Cr::shared_ptr<v8::metrics::Recorder> const&) + 159344 (Codex Framework + 12476624) [0x112d7f0d0]
+        37  v8::Object::SetPrivate(v8::Local<v8::Context>, v8::Local<v8::Private>, v8::Local<v8::Value>) + 15699 (Codex Framework + 17990083) [0x1132c11c3]
+          37  v8::Object::SetPrivate(v8::Local<v8::Context>, v8::Local<v8::Private>, v8::Local<v8::Value>) + 15837 (Codex Framework + 17990221) [0x1132c124d]
+            37  font_format_check$cxxbridge1$194$is_cbdt_cblc + 330270 (Codex Framework + 34468174) [0x11427814e]
+              34  v8::Script::ScriptId() const + 13112 (Codex Framework + 6434056) [0x1127bbd08]
+                34  node::PrincipalRealm::inspector_disable_async_hooks() const + 296272 (Codex Framework + 6814640) [0x112818bb0]
+                  34  node::PrincipalRealm::inspector_disable_async_hooks() const + 296632 (Codex Framework + 6815000) [0x112818d18]
+                    34  v8::internal::compiler::CompilationDependencies::DependOnContextCell(v8::internal::compiler::ContextCellRef, v8::internal::ContextCell::State) + 93095 (Codex Framework + 8032391) [0x112942087]
+                      34  v8::internal::compiler::CompilationDependencies::DependOnContextCell(v8::internal::compiler::ContextCellRef, v8::internal::ContextCell::State) + 93452 (Codex Framework + 8032748) [0x1129421ec]
+                        34  node::profiler::V8HeapProfilerConnection::Start() + 23598402 (Codex Framework + 164061970) [0x11be0f312]
+                          32  node::profiler::V8HeapProfilerConnection::Start() + 23673271 (Codex Framework + 164136839) [0x11be21787]
+                            32  v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1932907 (Codex Framework + 65995403) [0x11608928b]
+                              32  pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                          2   node::profiler::V8HeapProfilerConnection::Start() + 23673776 (Codex Framework + 164137344) [0x11be21980]
+                            2   ftruncate + 10 (libsystem_kernel.dylib + 14002) [0x7ff808a686b2]
+              3   v8::Script::ScriptId() const + 12509 (Codex Framework + 6433453) [0x1127bbaad]
+                3   v8::api_internal::MakeWeak(unsigned long**) + 14535 (Codex Framework + 2260583) [0x1123c0e67]
+                  3   v8::internal::compiler::CompilationDependencies::DependOnContextCell(v8::internal::compiler::ContextCellRef, v8::internal::ContextCell::State) + 93095 (Codex Framework + 8032391) [0x112942087]
+                    3   v8::internal::compiler::CompilationDependencies::DependOnContextCell(v8::internal::compiler::ContextCellRef, v8::internal::ContextCell::State) + 93452 (Codex Framework + 8032748) [0x1129421ec]
+                      3   cppgc::LivenessBroker::IsHeapObjectAliveImpl(void const*) const + 43128 (Codex Framework + 24755192) [0x113934bf8]
+                        3   v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 1538728 (Codex Framework + 65601224) [0x116028ec8]
+                          3   v8::Array::Length() const + 201472 (Codex Framework + 58983184) [0x1159d9310]
+                            3   node::PerIsolatePlatformData::PostNonNestableDelayedTaskImpl(std::__Cr::unique_ptr<v8::Task, std::__Cr::default_delete<v8::Task>>, double, v8::SourceLocation const&) + 18854 (Codex Framework + 56008694) [0x115702ff6]
+                              3   v8::FunctionTemplate::SetAcceptAnyReceiver(bool) + 57718 (Codex Framework + 37042310) [0x1144ec886]
+                                3   v8::internal::compiler::CompilationDependencies::FieldTypeDependencyOffTheRecord(v8::internal::compiler::MapRef, v8::internal::compiler::MapRef, v8::internal::InternalIndex, v8::internal::compiler::ObjectRef) const + 2711983 (Codex Framework + 66774479) [0x1161475cf]
+                                  3   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+  1   start_wqthread + 15 (libsystem_pthread.dylib + 6171) [0x7ff808aa581b]
+    1   _pthread_wqthread + 298 (libsystem_pthread.dylib + 10271) [0x7ff808aa681f]
+      1   _dispatch_workloop_worker_thread + 867 (libdispatch.dylib + 70581) [0x7ff8089003b5]
+        1   _dispatch_root_queue_drain_deferred_wlh + 275 (libdispatch.dylib + 72179) [0x7ff8089009f3]
+          1   _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+            1   _dispatch_lane_serial_drain + 775 (libdispatch.dylib + 33271) [0x7ff8088f71f7]
+              1   _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                1   _dispatch_block_async_invoke2 + 85 (libdispatch.dylib + 57780) [0x7ff8088fd1b4]
+                  1   invocation function for block in MTLCompilerScheduler::createBlockWithData(std::__1::shared_ptr<MTLSchedulerRequest>) + 31 (Metal + 1747829) [0x7ff81522bb75]
+                    1   _dispatch_block_invoke_direct + 271 (libdispatch.dylib + 21294) [0x7ff8088f432e]
+                      1   _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                        1   invocation function for block in MTLSchedulerRequest::generateXPCBlock(qos_class_t, int) + 1470 (Metal + 1995367) [0x7ff815268267]
+                          1   invocation function for block in MTLCompilerScheduler::buildRequest(unsigned int, std::__1::shared_ptr<MTLCompilerRequest>, bool, objc_object*, void (MTLCompilerError, NSObject<OS_dispatch_data>*, char const*) block_pointer) + 72 (Metal + 1752385) [0x7ff81522cd41]
+                            1   __130-[_MTLFunctionInternal newSpecializedFunctionWithDescriptor:destinationArchive:functionCache:sync:compilerTask:completionHandler:]_block_invoke + 594 (Metal + 1553319) [0x7ff8151fc3a7]
+                              1   MultiLevelAirCache::addElement(MTLHashKey const&, MTLAirEntry*) + 68 (Metal + 240720) [0x7ff8150bbc50]
+                                1   MultiLevelAirCache::addElement(MTLBinaryKey*, MTLAirEntry*) + 245 (Metal + 240607) [0x7ff8150bbbdf]
+                                  1   MTLCompilerFSCache::addElement(MTLUINT256_t, void const*, unsigned long) + 294 (Metal + 167208) [0x7ff8150a9d28]
+                                    1   fscache_insert_and_retain + 1337 (libCoreFSCache.dylib + 11008) [0x7ffb14223b00]
+                                      1   _platform_memmove$VARIANT$Haswell + 356 (libsystem_platform.dylib + 2788) [0x7ff808ab0ae4]
+                                        1   <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+
+  Binary Images:
+           0x100f94000 -                ???  com.openai.codex.helper 151.0.7922.174 (7922.174)    <4C4C44FD-5555-3144-A122-233A5D810B50>  /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/151.0.7922.174/Helpers/Codex (Service).app/Contents/MacOS/Codex (Service)
+           0x112199000 -        0x122d4ffff  com.openai.codex.framework 151.0.7922.174 (7922.174) <4C4C44E7-5555-3144-A1E8-20E118425550>  /Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/151.0.7922.174/Codex Framework
+        0x7ff8088ef000 -     0x7ff808936d91  libdispatch.dylib (1542.160.2)                       <EEDF9EFE-1B9B-39AC-B37F-BA6F1FA18CEC>  /usr/lib/system/libdispatch.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)                <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff808aa4000 -     0x7ff808aafebf  libsystem_pthread.dylib (539.100.4)                  <A55CF178-EA25-3CC0-8BCD-A4209F2ACD1D>  /usr/lib/system/libsystem_pthread.dylib
+        0x7ff808ab0000 -     0x7ff808ab9ebf  libsystem_platform.dylib (375.120.2)                 <CD621568-6D00-376A-B8DA-6B794DADAFE4>  /usr/lib/system/libsystem_platform.dylib
+        0x7ff815081000 -     0x7ff81536c159  com.apple.Metal 373.7 (373.7)                        <5D64FA80-29CE-32AA-BAB6-4E5034132C0B>  /System/Library/Frameworks/Metal.framework/Versions/A/Metal
+        0x7ffb14221000 -     0x7ffb14228307  libCoreFSCache.dylib (352.2)                         <64AB32D0-7082-3395-A568-B2C9F8DCDFD8>  /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib

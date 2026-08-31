@@ -1,0 +1,258 @@
+Date/Time:        2026-08-30 23:00:46.960 +0800
+End time:         2026-08-30 23:15:30.601 +0800
+OS Version:       macOS 26.6.2 (Build 25G83)
+Architecture:     x86_64h
+Report Version:   72
+Incident Identifier: A1770EF3-5C48-4D76-AA67-1604D948F8CA
+Share With Devs:  Yes
+
+Data Source:      Microstackshots
+Shared Cache:     F25A411F-0E2B-394F-861B-412F1A52F90D slid base address 0x7ff805c04000, slide 0x5c04000
+
+Command:          appstoreagent
+Path:             /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Support/appstoreagent
+Codesigning ID:   com.apple.appstoreagent
+Resource Coalition: "com.apple.appstoreagent"(2882)
+On Behalf Of:     203 samples UNKNOWN [3479] (203 samples originated by UNKNOWN [3479])
+Architecture:     x86_64
+Parent:           launchd [1]
+PID:              2953
+
+Event:            disk writes
+Action taken:     none
+Writes:           2147.49 MB of file backed memory dirtied over 884 seconds (2430.28 KB per second average), exceeding limit of 24.86 KB per second over 86400 seconds
+Writes limit:     2147.48 MB
+Limit duration:   86400s
+Writes caused:    2147.49 MB
+Writes duration:  884s
+Duration:         883.64s
+Duration Sampled: 882.86s (event starts 0.36s before samples, event ends 0.42s after samples)
+Steps:            705 (10.49 MB/step)
+
+Hardware model:   iMac20,1
+Active cpus:      12
+Memory size:      16 GB
+HW page size:     4096
+VM page size:     4096
+Shared cache residency: 29.53% (1632.48 MB / 5528.70 MB)
+Boot args:        -v -ibtcompatbeta revpatch=sbvmm agdpmod=pikera keepsyms=1 debug=0x100
+
+Time Since Boot:  2851s
+Time Awake Since Boot: 2851s
+Time Since Wake:  n/a (machine hasn't slept)
+
+Total CPU Time:   280.309s
+Advisory levels:  Battery -> 3, User -> 2, ThermalPressure -> 0, Combined -> 2
+Free disk space:  918.14 GB/945.87 GB, low space threshold 3072 MB
+Vnodes Available: 75.52% (198743/263168, 190949 allocated)
+Models:           none
+
+Preferred User Language: zh-Hans-CN
+Country Code:     CN
+Keyboards:        ABC
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  203  completeTaskWithClosure(swift::AsyncContext*, swift::SwiftError*) + 0 (libswift_Concurrency.dylib + 45504) [0x7ffe11c3f1c0]
+  203  ??? (appstoreagent + 224832) [0x10a791e40]
+  203  ??? (appstoreagent + 768992) [0x10a816be0]
+  103  ??? (appstoreagent + 302816) [0x10a7a4ee0]
+  103  ??? (appstoreagent + 75872) [0x10a76d860]
+  103  ??? (appstoreagent + 302784) [0x10a7a4ec0]
+  103  ??? (appstoreagent + 1108640) [0x10a869aa0]
+  103  ??? (appstoreagent + 302848) [0x10a7a4f00]
+  103  ??? (appstoreagent + 296720) [0x10a7a3710]
+  103  ??? (appstoreagent + 300207) [0x10a7a44af]
+  98   ??? (appstoreagent + 1087827) [0x10a864953]
+  98   fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+  98   __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+  98   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+
+
+Powerstats for:   appstoreagent [2953]
+UUID:             595918DA-032E-3B3A-830D-686F917E15E0
+Path:             /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Support/appstoreagent
+Codesigning ID:   com.apple.appstoreagent
+Resource Coalition: 203 samples "com.apple.appstoreagent"(2882)
+On Behalf Of:     203 samples UNKNOWN [3479] (203 samples originated by UNKNOWN [3479])
+Architecture:     x86_64
+Parent:           launchd [1]
+UID:              501
+Sudden Term:      Tracked (allows idle exit)
+Footprint:        9864 KB -> 20.29 MB (+10.66 MB) (max 33.71 MB )
+Pageins:          4 pages
+Start time:       2026-08-30 23:15:00.715 +0800
+End time:         2026-08-30 23:15:30.180 +0800
+Num samples:      203 (29%)
+Num threads:      9
+Primary state:    203 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 203 samples Active
+Power Source:     0 samples on Battery, 203 samples on AC
+  203  completeTaskWithClosure(swift::AsyncContext*, swift::SwiftError*) + 0 (libswift_Concurrency.dylib + 45504) [0x7ffe11c3f1c0]
+    203  ??? (appstoreagent + 224832) [0x10a791e40]
+      203  ??? (appstoreagent + 768992) [0x10a816be0]
+        103  ??? (appstoreagent + 302816) [0x10a7a4ee0]
+          103  ??? (appstoreagent + 75872) [0x10a76d860]
+            103  ??? (appstoreagent + 302784) [0x10a7a4ec0]
+              103  ??? (appstoreagent + 1108640) [0x10a869aa0]
+                103  ??? (appstoreagent + 302848) [0x10a7a4f00]
+                  103  ??? (appstoreagent + 296720) [0x10a7a3710]
+                    103  ??? (appstoreagent + 300207) [0x10a7a44af]
+                      98   ??? (appstoreagent + 1087827) [0x10a864953]
+                        98   fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                          98   __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                            98   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                              98   <on behalf of UNKNOWN [3479] (originated by UNKNOWN [3479])>
+                      5    ??? (appstoreagent + 1086993) [0x10a864611]
+                        5    fseek + 67 (libsystem_c.dylib + 89994) [0x7ff80894ff8a]
+                          5    _fseeko + 852 (libsystem_c.dylib + 216882) [0x7ff80896ef32]
+                            5    __sflush + 96 (libsystem_c.dylib + 70850) [0x7ff80894b4c2]
+                              5    __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                5    <on behalf of UNKNOWN [3479] (originated by UNKNOWN [3479])>
+        100  ??? (appstoreagent + 75872) [0x10a76d860]
+          100  ??? (appstoreagent + 1031104) [0x10a856bc0]
+            100  ??? (appstoreagent + 1088576) [0x10a864c40]
+              100  ??? (appstoreagent + 1092015) [0x10a8659af]
+                100  ??? (appstoreagent + 1088029) [0x10a864a1d]
+                  100  fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                    100  __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                      100  __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                        100  <on behalf of UNKNOWN [3479] (originated by UNKNOWN [3479])>
+
+  Binary Images:
+           0x10a75b000 -        0x10ad9afff  appstoreagent (12.6.7)                  <595918DA-032E-3B3A-830D-686F917E15E0>  /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Support/appstoreagent
+        0x7ff80893a000 -     0x7ff8089c1e9f  libsystem_c.dylib (1752.160.4)          <D8E26E42-0A43-3361-B0A8-B45C3BB10F19>  /usr/lib/system/libsystem_c.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)   <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ffe11c34000 -     0x7ffe11ca2ec5  libswift_Concurrency.dylib (6.3.2.1.11) <2069030D-9674-3F7A-B86D-18D0302979A4>  /usr/lib/swift/libswift_Concurrency.dylib
+
+
+Powerstats for:   softwareupdated
+UUID:             0F6CC328-64A4-3227-9F77-144F1179F205
+Path:             /System/Library/CoreServices/Software Update.app/Contents/Resources/softwareupdated
+Resource Coalition: 186 samples "com.apple.softwareupdated"(263)
+Architecture:     x86_64
+Pageins:          13 pages
+Start time:       2026-08-30 23:04:38.700 +0800
+End time:         2026-08-30 23:14:09.223 +0800
+Num samples:      186 (26%)
+Primary state:    179 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Utility, Requested Thread QoS Utility, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 186 samples Active
+Power Source:     0 samples on Battery, 186 samples on AC
+  186  start_wqthread + 15 (libsystem_pthread.dylib + 6171) [0x7ff808aa581b]
+    183  _pthread_wqthread + 233 (libsystem_pthread.dylib + 10206) [0x7ff808aa67de]
+      183  _dispatch_worker_thread2 + 179 (libdispatch.dylib + 68834) [0x7ff8088ffce2]
+        183  _dispatch_root_queue_drain + 84 (libdispatch.dylib + 67646) [0x7ff8088ff83e]
+          183  _dispatch_root_queue_drain.cold.4 + 366 (libdispatch.dylib + 207564) [0x7ff808921acc]
+            183  _dispatch_queue_override_invoke + 1060 (libdispatch.dylib + 19473) [0x7ff8088f3c11]
+              183  _dispatch_queue_override_invoke.cold.3 + 34 (libdispatch.dylib + 201702) [0x7ff8089203e6]
+                183  _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                  183  _dispatch_disk_perform + 483 (libdispatch.dylib + 175826) [0x7ff808919ed2]
+                    183  __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                      4    <Effective Thread QoS Background, Requested Thread QoS Background>
+    3    _pthread_wqthread + 298 (libsystem_pthread.dylib + 10271) [0x7ff808aa681f]
+      3    _dispatch_workloop_worker_thread + 867 (libdispatch.dylib + 70581) [0x7ff8089003b5]
+        3    _dispatch_root_queue_drain_deferred_wlh + 275 (libdispatch.dylib + 72179) [0x7ff8089009f3]
+          3    _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+            3    _dispatch_lane_serial_drain + 775 (libdispatch.dylib + 33271) [0x7ff8088f71f7]
+              3    _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                3    _dispatch_call_block_and_release + 12 (libdispatch.dylib + 5654) [0x7ff8088f0616]
+                  2    __60-[SUCatalogDataManager _retrieveURL:forProduct:withHandler:]_block_invoke.119 + 195 (SoftwareUpdate + 522940) [0x7ff81d637abc]
+                    2    -[NSData(NSData) writeToFile:options:error:] + 159 (Foundation + 260177) [0x7ff809db8851]
+                      2    @objc static NSData._writeData(toPath:data:options:reportProgress:) + 86 (Foundation + 4411206) [0x7ff80a1adf46]
+                        2    specialized static NSData._writeData(toPath:data:options:reportProgress:) + 1081 (Foundation + 4481113) [0x7ff80a1bf059]
+                          2    closure #1 in writeToFileNoAux(path:buffer:options:attributes:reportProgress:) + 763 (Foundation + 4467387) [0x7ff80a1bbabb]
+                            2    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                              2    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                  1    __298-[SUScanController refreshAvailableProductsInForeground:limitedToChanged:evenIfConfigurationChanged:initiatedByDeviceConnection:limitedToProductKeys:limitedToProductTypes:forCurrentConfiguration:distributionEnvironment:distributionEvalutionMetainfo:installedPrinters:preferredLocalizations:finish:]_block_invoke_2 + 476 (SoftwareUpdate + 430908) [0x7ff81d62133c]
+                    1    _dispatch_lane_barrier_sync_invoke_and_complete + 60 (libdispatch.dylib + 58856) [0x7ff8088fd5e8]
+                      1    _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                        1    __298-[SUScanController refreshAvailableProductsInForeground:limitedToChanged:evenIfConfigurationChanged:initiatedByDeviceConnection:limitedToProductKeys:limitedToProductTypes:forCurrentConfiguration:distributionEnvironment:distributionEvalutionMetainfo:installedPrinters:preferredLocalizations:finish:]_block_invoke.237 + 145 (SoftwareUpdate + 432111) [0x7ff81d6217ef]
+                          1    -[SUCatalogDataManager resetState] + 69 (SoftwareUpdate + 44916) [0x7ff81d5c2f74]
+                            1    _dispatch_lane_barrier_sync_invoke_and_complete + 60 (libdispatch.dylib + 58856) [0x7ff8088fd5e8]
+                              1    _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                                1    @objc _NSFileManagerBridge.removeItem(atPath:) + 64 (Foundation + 4799024) [0x7ff80a20ca30]
+                                  1    _NSFileManagerBridge.removeItem(atPath:) + 345 (Foundation + 4797561) [0x7ff80a20c479]
+                                    1    specialized static _FileOperations._removeFile(_:_:with:) + 531 (Foundation + 5131427) [0x7ff80a25dca3]
+                                      1    specialized static _FileOperations._removeFile(_:_:state:) + 57 (Foundation + 5120345) [0x7ff80a25b159]
+                                        1    removefile + 347 (libremovefile.dylib + 2299) [0x7ff818aa18fb]
+                                          1    __removefile_tree_walker + 385 (libremovefile.dylib + 3109) [0x7ff818aa1c25]
+                                            1    __unlink + 10 (libsystem_kernel.dylib + 15478) [0x7ff808a68c76]
+                                              1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+
+  Binary Images:
+           0x10505d000 -                ???  softwareupdated                                   <0F6CC328-64A4-3227-9F77-144F1179F205>  /System/Library/CoreServices/Software Update.app/Contents/Resources/softwareupdated
+        0x7ff8088ef000 -     0x7ff808936d91  libdispatch.dylib (1542.160.2)                    <EEDF9EFE-1B9B-39AC-B37F-BA6F1FA18CEC>  /usr/lib/system/libdispatch.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)             <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff808aa4000 -     0x7ff808aafebf  libsystem_pthread.dylib (539.100.4)               <A55CF178-EA25-3CC0-8BCD-A4209F2ACD1D>  /usr/lib/system/libsystem_pthread.dylib
+        0x7ff809d79000 -     0x7ff80adb4702  com.apple.Foundation 6.9 (5026.6.7)               <44158FA3-1C9F-370D-BE8D-650DAB02BC40>  /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+        0x7ff818aa1000 -     0x7ff818aa380f  libremovefile.dylib (85.100.6)                    <40EACBDA-A392-3D22-822D-AE6F3A0E4FE6>  /usr/lib/system/libremovefile.dylib
+        0x7ff81d5b8000 -     0x7ff81d67af22  com.apple.SoftwareUpdate.framework 6 (2219.160.9) <D2B37FA7-A6D2-3AD8-B015-9EBC43E51F49>  /System/Library/PrivateFrameworks/SoftwareUpdate.framework/Versions/A/SoftwareUpdate
+
+
+Powerstats for:   system_installd
+UUID:             F37AABAF-C0C3-32E9-AF74-77F357800D79
+Path:             /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/Resources/system_installd
+Resource Coalition: 118 samples "com.apple.system_installd"(695)
+On Behalf Of:     118 samples softwareupdated [180] (118 samples originated by UNKNOWN [3206, 3465])
+Architecture:     x86_64
+Pageins:          92 pages
+Start time:       2026-08-30 23:04:44.958 +0800
+End time:         2026-08-30 23:15:28.884 +0800
+Num samples:      118 (17%)
+Primary state:    114 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Utility, Requested Thread QoS Utility, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 118 samples Active
+Power Source:     0 samples on Battery, 118 samples on AC
+  118  start_wqthread + 15 (libsystem_pthread.dylib + 6171) [0x7ff808aa581b]
+    117  _pthread_wqthread + 298 (libsystem_pthread.dylib + 10271) [0x7ff808aa681f]
+      117  _dispatch_workloop_worker_thread + 867 (libdispatch.dylib + 70581) [0x7ff8089003b5]
+        117  _dispatch_root_queue_drain_deferred_wlh + 275 (libdispatch.dylib + 72179) [0x7ff8089009f3]
+          117  _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+            117  _dispatch_lane_serial_drain + 319 (libdispatch.dylib + 32815) [0x7ff8088f702f]
+              117  _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+                117  _dispatch_lane_serial_drain + 1040 (libdispatch.dylib + 33536) [0x7ff8088f7300]
+                  117  _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                    117  _dispatch_call_block_and_release + 12 (libdispatch.dylib + 5654) [0x7ff8088f0616]
+                      117  ??? (AppleFSCompression + 18855) [0x7ff8184cb9a7]
+                        117  ??? (AppleFSCompression + 18495) [0x7ff8184cb83f]
+                          109  ??? (AppleFSCompression + 21993) [0x7ff8184cc5e9]
+                            109  pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              106  <on behalf of softwareupdated [180] (originated by UNKNOWN [3465])>
+                              3    <on behalf of softwareupdated [180] (originated by UNKNOWN [3206]), Effective Thread QoS Background, Requested Thread QoS Background>
+                          4    ??? (AppleFSCompression + 21907) [0x7ff8184cc593]
+                            4    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              4    <on behalf of softwareupdated [180] (originated by UNKNOWN [3465])>
+                          3    ??? (AppleFSCompression + 20239) [0x7ff8184cbf0f]
+                            3    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              3    <on behalf of softwareupdated [180] (originated by UNKNOWN [3465])>
+                          1    ??? (AppleFSCompression + 27561) [0x7ff8184cdba9]
+                            1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              1    <on behalf of softwareupdated [180] (originated by UNKNOWN [3206]), Effective Thread QoS Background, Requested Thread QoS Background>
+    1    _pthread_wqthread + 233 (libsystem_pthread.dylib + 10206) [0x7ff808aa67de]
+      1    _dispatch_worker_thread2 + 179 (libdispatch.dylib + 68834) [0x7ff8088ffce2]
+        1    _dispatch_root_queue_drain + 84 (libdispatch.dylib + 67646) [0x7ff8088ff83e]
+          1    _dispatch_root_queue_drain.cold.4 + 749 (libdispatch.dylib + 207947) [0x7ff808921c4b]
+            1    _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+              1    _dispatch_block_async_invoke2 + 85 (libdispatch.dylib + 57780) [0x7ff8088fd1b4]
+                1    -[PKInstall _installMain:] + 3197 (PackageKit + 149995) [0x7ff9112aa9eb]
+                  1    -[PKInstallOperationController run] + 252 (PackageKit + 435080) [0x7ff9112f0388]
+                    1    -[PKInstallOperation start] + 79 (PackageKit + 438969) [0x7ff9112f12b9]
+                      1    -[NSOperation start] + 726 (Foundation + 252259) [0x7ff809db6963]
+                        1    __NSOPERATION_IS_INVOKING_MAIN__ + 17 (Foundation + 255658) [0x7ff809db76aa]
+                          1    -[PKExtractInstallOperation main] + 540 (PackageKit + 452755) [0x7ff9112f4893]
+                            1    -[PKExtractInstallOperation _extractAllSpecifiersOnceAndReturnFailingSpecifier:andError:] + 550 (PackageKit + 451834) [0x7ff9112f44fa]
+                              1    -[PKExtractInstallOperation _extractBomForPackageSpecifier:error:] + 163 (PackageKit + 447958) [0x7ff9112f35d6]
+                                1    -[NSData(NSData) writeToFile:options:error:] + 159 (Foundation + 260177) [0x7ff809db8851]
+                                  1    @objc static NSData._writeData(toPath:data:options:reportProgress:) + 86 (Foundation + 4411206) [0x7ff80a1adf46]
+                                    1    specialized static NSData._writeData(toPath:data:options:reportProgress:) + 1081 (Foundation + 4481113) [0x7ff80a1bf059]
+                                      1    closure #1 in writeToFileNoAux(path:buffer:options:attributes:reportProgress:) + 763 (Foundation + 4467387) [0x7ff80a1bbabb]
+                                        1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                          1    <on behalf of softwareupdated [180] (originated by UNKNOWN [3465])>
+
+  Binary Images:
+           0x1068a4000 -                ???  system_installd                              <F37AABAF-C0C3-32E9-AF74-77F357800D79>  /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/Resources/system_installd
+        0x7ff8088ef000 -     0x7ff808936d91  libdispatch.dylib (1542.160.2)               <EEDF9EFE-1B9B-39AC-B37F-BA6F1FA18CEC>  /usr/lib/system/libdispatch.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)        <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff808aa4000 -     0x7ff808aafebf  libsystem_pthread.dylib (539.100.4)          <A55CF178-EA25-3CC0-8BCD-A4209F2ACD1D>  /usr/lib/system/libsystem_pthread.dylib
+        0x7ff809d79000 -     0x7ff80adb4702  com.apple.Foundation 6.9 (5026.6.7)          <44158FA3-1C9F-370D-BE8D-650DAB02BC40>  /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+        0x7ff8184c7000 -     0x7ff8184d1b7f  com.apple.AppleFSCompression 174.160.2 (1.0) <FB0550FE-93AC-3346-981B-B75419DAD2E5>  /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+        0x7ff911286000 -     0x7ff911360e54  com.apple.PackageKit 3.0 (1491.160.2)        <B7537A1F-4048-3CC3-B33D-6C1C7185954E>  /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/PackageKit

@@ -1,0 +1,605 @@
+Date/Time:        2026-08-31 00:36:43.928 +0800
+End time:         2026-08-31 01:44:29.846 +0800
+OS Version:       macOS 26.6.2 (Build 25G83)
+Architecture:     x86_64h
+Report Version:   72
+Incident Identifier: A9B80E39-06AE-4894-8C77-1FD90B81006E
+Share With Devs:  Yes
+
+Data Source:      Microstackshots
+Shared Cache:     F25A411F-0E2B-394F-861B-412F1A52F90D slid base address 0x7ff805c04000, slide 0x5c04000
+
+Command:          zen
+Path:             /Applications/Zen.app/Contents/MacOS/zen
+Identifier:       app.zen-browser.zen
+Version:          1.21.16b (126.8.28)
+Team ID:          9V5K9TP787
+Is First Party:   No
+Beta Identifier:  A6ED9A23-10C8-5FB9-A000-B29C3BCA23F5
+Resource Coalition: "app.zen-browser.zen"(4651)
+Architecture:     x86_64
+Parent:           UNKNOWN [1]
+PID:              9601
+
+Event:            disk writes
+Action taken:     none
+Writes:           2147.50 MB of file backed memory dirtied over 4066 seconds (528.17 KB per second average), exceeding limit of 24.86 KB per second over 86400 seconds
+Writes limit:     2147.48 MB
+Limit duration:   86400s
+Writes caused:    2147.50 MB
+Writes duration:  4066s
+Duration:         4065.92s
+Duration Sampled: 3926.42s (event starts 139.45s before samples)
+Steps:            170 (3874 samples lost, 10.49 MB/step)
+
+Hardware model:   iMac20,1
+Active cpus:      12
+Memory size:      16 GB
+HW page size:     4096
+VM page size:     4096
+Shared cache residency: 8.55% (472.57 MB / 5528.70 MB)
+Boot args:        -v -ibtcompatbeta revpatch=sbvmm agdpmod=pikera keepsyms=1 debug=0x100
+
+Time Since Boot:  8747s
+Time Awake Since Boot: 8747s
+Time Since Wake:  n/a (machine hasn't slept)
+
+Total CPU Time:   83.123s
+Advisory levels:  Battery -> 3, User -> 2, ThermalPressure -> 0, Combined -> 2
+Free disk space:  884.52 GB/945.87 GB, low space threshold 3072 MB
+Vnodes Available: 67.94% (178808/263168)
+Models:           none
+
+Preferred User Language: zh-Hans-CN
+Country Code:     CN
+Keyboards:        ABC
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  160  thread_start + 15 (libsystem_pthread.dylib + 6191) [0x7ff808aa582f]
+  160  _pthread_start + 115 (libsystem_pthread.dylib + 23881) [0x7ff808aa9d49]
+  160  ??? (libnss3.dylib + 868152) [0x112d3ef38]
+  119  ??? (XUL + 5347577) [0x12eb388f9]
+  119  ??? (XUL + 5601136) [0x12eb76770]
+  86   ??? (XUL + 5883307) [0x12ebbb5ab]
+  86   ??? (XUL + 5388078) [0x12eb4272e]
+  56   ??? (XUL + 5400081) [0x12eb45611]
+  56   ??? (XUL + 5322647) [0x12eb32797]
+  20   ??? (XUL + 5577257) [0x12eb70a29]
+  20   ??? (XUL + 5529315) [0x12eb64ee3]
+  20   ??? (XUL + 5530043) [0x12eb651bb]
+  20   ??? (XUL + 5123544) [0x12eb01dd8]
+  20   ??? (XUL + 5115925) [0x12eb00015]
+  20   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+
+
+Powerstats for:   zen (Zen) [9601]
+UUID:             BB3C119F-5292-3BBC-B881-A37080FD6666
+Path:             /Applications/Zen.app/Contents/MacOS/zen
+Identifier:       app.zen-browser.zen
+Version:          1.21.16b (126.8.28)
+Team ID:          9V5K9TP787
+Is First Party:   No
+Beta Identifier:  A6ED9A23-10C8-5FB9-A000-B29C3BCA23F5
+Resource Coalition: 170 samples "app.zen-browser.zen"(4651)
+Architecture:     x86_64
+Parent:           UNKNOWN [1]
+UID:              501
+Footprint:        253.13 MB -> 889.31 MB (+636.18 MB) (max 1345.20 MB )
+Pageins:          14180 pages
+Start time:       2026-08-31 00:39:03.383 +0800
+End time:         2026-08-31 01:44:29.803 +0800
+Num samples:      170 (100%)
+Num threads:      38
+Primary state:    67 samples Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS Default, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 170 samples Active
+Power Source:     0 samples on Battery, 170 samples on AC
+  160  thread_start + 15 (libsystem_pthread.dylib + 6191) [0x7ff808aa582f]
+    160  _pthread_start + 115 (libsystem_pthread.dylib + 23881) [0x7ff808aa9d49]
+      160  ??? (libnss3.dylib + 868152) [0x112d3ef38]
+        119  ??? (XUL + 5347577) [0x12eb388f9]
+          119  ??? (XUL + 5601136) [0x12eb76770]
+            86   ??? (XUL + 5883307) [0x12ebbb5ab]
+              86   ??? (XUL + 5388078) [0x12eb4272e]
+                56   ??? (XUL + 5400081) [0x12eb45611]
+                  56   ??? (XUL + 5322647) [0x12eb32797]
+                    20   ??? (XUL + 5577257) [0x12eb70a29]
+                      20   ??? (XUL + 5529315) [0x12eb64ee3]
+                        20   ??? (XUL + 5530043) [0x12eb651bb]
+                          20   ??? (XUL + 5123544) [0x12eb01dd8]
+                            20   ??? (XUL + 5115925) [0x12eb00015]
+                              20   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                    10   ??? (XUL + 17449120) [0x12f6c30a0]
+                      10   ??? (XUL + 17450890) [0x12f6c378a]
+                        10   ??? (XUL + 17497702) [0x12f6cee66]
+                          10   ??? (XUL + 52938989) [0x13189b8ed]
+                            9    ??? (XUL + 52938720) [0x13189b7e0]
+                              9    ??? (XUL + 16924444) [0x12f642f1c]
+                                9    ??? (XUL + 2481620) [0x12e87cdd4]
+                                  9    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                    5    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                    4    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                            1    ??? (XUL + 52938623) [0x13189b77f]
+                              1    ??? (XUL + 52939442) [0x13189bab2]
+                                1    ??? (XUL + 16924444) [0x12f642f1c]
+                                  1    ??? (XUL + 2481620) [0x12e87cdd4]
+                                    1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                      1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                    9    ??? (XUL + 5154998) [0x12eb098b6]
+                      9    ??? (XUL + 5163660) [0x12eb0ba8c]
+                        9    ??? (XUL + 52991455) [0x1318a85df]
+                          9    ??? (XUL + 5132949) [0x12eb04295]
+                            9    ??? (XUL + 52991871) [0x1318a877f]
+                              9    ??? (XUL + 2477499) [0x12e87bdbb]
+                                9    ??? (XUL + 2477685) [0x12e87be75]
+                                  9    ??? (XUL + 2481620) [0x12e87cdd4]
+                                    9    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                      5    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                      4    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                    8    ??? (XUL + 5560078) [0x12eb6c70e]
+                      6    ??? (XUL + 5524378) [0x12eb63b9a]
+                        6    ??? (XUL + 2481620) [0x12e87cdd4]
+                          6    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                            3    <Non-Frontmost App>
+                      1    ??? (XUL + 5524744) [0x12eb63d08]
+                        1    ??? (XUL + 5528730) [0x12eb64c9a]
+                          1    ??? (XUL + 5530043) [0x12eb651bb]
+                            1    ??? (XUL + 5123960) [0x12eb01f78]
+                              1    ??? (XUL + 5117731) [0x12eb00723]
+                                1    __rename + 10 (libsystem_kernel.dylib + 14770) [0x7ff808a689b2]
+                      1    ??? (XUL + 5524315) [0x12eb63b5b]
+                        1    ??? (XUL + 2481968) [0x12e87cf30]
+                          1    ??? (XUL + 5111797) [0x12eafeff5]
+                            1    PR_OpenFile + 161 (libnss3.dylib + 854609) [0x112d3ba51]
+                              1    __open + 10 (libsystem_kernel.dylib + 4914) [0x7ff808a66332]
+                    3    ??? (XUL + 17472942) [0x12f6c8dae]
+                      3    ??? (XUL + 17471021) [0x12f6c862d]
+                        3    ??? (XUL + 17465902) [0x12f6c722e]
+                          3    ??? (XUL + 16868128) [0x12f635320]
+                            3    ??? (XUL + 6743817) [0x12ec8d709]
+                              3    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                                3    ??? (libnss3.dylib + 246911) [0x112ca747f]
+                                  3    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                                    3    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                                      3    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                        3    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                          3    ??? (XUL + 6728284) [0x12ec89a5c]
+                                            3    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                              2    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                              1    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                    3    ??? (XUL + 17436831) [0x12f6c009f]
+                      2    ??? (XUL + 17437407) [0x12f6c02df]
+                        2    ??? (XUL + 17441896) [0x12f6c1468]
+                          2    ??? (XUL + 16868128) [0x12f635320]
+                            2    ??? (XUL + 6743817) [0x12ec8d709]
+                              2    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                                2    ??? (libnss3.dylib + 257677) [0x112ca9e8d]
+                                  2    ??? (libnss3.dylib + 125392) [0x112c899d0]
+                                    2    ??? (libnss3.dylib + 220917) [0x112ca0ef5]
+                                      2    ??? (XUL + 6728284) [0x12ec89a5c]
+                                        2    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                          2    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                      1    ??? (XUL + 17439573) [0x12f6c0b55]
+                        1    ??? (XUL + 6743817) [0x12ec8d709]
+                          1    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                            1    ??? (libnss3.dylib + 246911) [0x112ca747f]
+                              1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                                1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                                  1    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                    1    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                      1    ??? (XUL + 6728284) [0x12ec89a5c]
+                                        1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                          1    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                    1    ??? (XUL + 41950924) [0x130e20ecc]
+                      1    ??? (XUL + 41947858) [0x130e202d2]
+                        1    ??? (XUL + 117530791) [0x1356350a7]
+                          1    ??? (XUL + 117507631) [0x13562f62f]
+                            1    ??? (XUL + 41862953) [0x130e0b729]
+                              1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                1    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                    1    ??? (XUL + 17432766) [0x12f6bf0be]
+                      1    ??? (XUL + 16868609) [0x12f635501]
+                        1    ??? (XUL + 6702360) [0x12ec83518]
+                          1    ??? (libnss3.dylib + 120972) [0x112c8888c]
+                            1    ??? (libnss3.dylib + 43649) [0x112c75a81]
+                              1    ??? (libnss3.dylib + 215872) [0x112c9fb40]
+                                1    ??? (libnss3.dylib + 216888) [0x112c9ff38]
+                                  1    ??? (libnss3.dylib + 217803) [0x112ca02cb]
+                                    1    ??? (libnss3.dylib + 220917) [0x112ca0ef5]
+                                      1    ??? (XUL + 6728284) [0x12ec89a5c]
+                                        1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                          1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                    1    ??? (XUL + 5554884) [0x12eb6b2c4]
+                      1    ??? (XUL + 5524378) [0x12eb63b9a]
+                        1    ??? (XUL + 2481620) [0x12e87cdd4]
+                          1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                23   ??? (XUL + 6725271) [0x12ec88e97]
+                  23   ??? (XUL + 6722279) [0x12ec882e7]
+                    23   ??? (XUL + 6701570) [0x12ec83202]
+                      22   sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                        22   ??? (libnss3.dylib + 238572) [0x112ca53ec]
+                          22   ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                            22   ??? (libnss3.dylib + 42299) [0x112c7553b]
+                              22   ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                22   ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                  22   pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                    17   <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                    5    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                      1    sqlite3_step + 750 (libnss3.dylib + 28894) [0x112c720de]
+                        1    ??? (libnss3.dylib + 124588) [0x112c896ac]
+                          1    ??? (libnss3.dylib + 124864) [0x112c897c0]
+                            1    ??? (libnss3.dylib + 125392) [0x112c899d0]
+                              1    ??? (libnss3.dylib + 220917) [0x112ca0ef5]
+                                1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                  1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                5    ??? (XUL + 53930289) [0x13198d931]
+                  5    ??? (XUL + 6743817) [0x12ec8d709]
+                    5    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                      3    ??? (libnss3.dylib + 238572) [0x112ca53ec]
+                        3    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                          3    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                            2    ??? (libnss3.dylib + 40639) [0x112c74ebf]
+                              2    ??? (libnss3.dylib + 191432) [0x112c99bc8]
+                                2    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                  2    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                            1    ??? (libnss3.dylib + 40495) [0x112c74e2f]
+                              1    ??? (libnss3.dylib + 185739) [0x112c9858b]
+                                1    ??? (libnss3.dylib + 186510) [0x112c9888e]
+                                  1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                    1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                      1    ??? (libnss3.dylib + 242035) [0x112ca6173]
+                        1    ??? (libnss3.dylib + 324337) [0x112cba2f1]
+                          1    ??? (libnss3.dylib + 185739) [0x112c9858b]
+                            1    ??? (libnss3.dylib + 186510) [0x112c9888e]
+                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                      1    ??? (libnss3.dylib + 236761) [0x112ca4cd9]
+                        1    ??? (libnss3.dylib + 320222) [0x112cb92de]
+                          1    ??? (libnss3.dylib + 185739) [0x112c9858b]
+                            1    ??? (libnss3.dylib + 186510) [0x112c9888e]
+                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 53606925) [0x13193ea0d]
+                  1    ??? (XUL + 53606697) [0x13193e929]
+                    1    ??? (XUL + 6314165) [0x12ec248b5]
+                      1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                        1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 5400931) [0x12eb45963]
+                  1    ??? (XUL + 98923035) [0x13447621b]
+                    1    ??? (XUL + 98883972) [0x13446c984]
+                      1    ??? (XUL + 106827810) [0x134c00022]
+                        1    ??? (XUL + 106690162) [0x134bde672]
+                          1    ??? (XUL + 106757634) [0x134beee02]
+                            1    ??? (XUL + 106682649) [0x134bdc919]
+                              1    ??? (XUL + 106744298) [0x134beb9ea]
+                                1    ??? (XUL + 40122342) [0x130c627e6]
+                                  1    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                                    1    ??? (libnss3.dylib + 238572) [0x112ca53ec]
+                                      1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                                        1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                                          1    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                            1    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+            33   ??? (XUL + 5883499) [0x12ebbb66b]
+              33   ??? (XUL + 5388078) [0x12eb4272e]
+                11   ??? (XUL + 6725271) [0x12ec88e97]
+                  11   ??? (XUL + 6722279) [0x12ec882e7]
+                    11   ??? (XUL + 6701570) [0x12ec83202]
+                      8    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                        7    ??? (libnss3.dylib + 238572) [0x112ca53ec]
+                          7    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                            7    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                              7    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                7    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                  7    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                    4    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                    3    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                        1    ??? (libnss3.dylib + 244027) [0x112ca693b]
+                          1    ??? (libnss3.dylib + 321191) [0x112cb96a7]
+                            1    ??? (libnss3.dylib + 357886) [0x112cc25fe]
+                              1    ??? (libnss3.dylib + 198707) [0x112c9b833]
+                                1    ??? (libnss3.dylib + 185739) [0x112c9858b]
+                                  1    ??? (libnss3.dylib + 186510) [0x112c9888e]
+                                    1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                      1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                      3    sqlite3_step + 750 (libnss3.dylib + 28894) [0x112c720de]
+                        3    ??? (libnss3.dylib + 124588) [0x112c896ac]
+                          3    ??? (libnss3.dylib + 124864) [0x112c897c0]
+                            3    ??? (libnss3.dylib + 125392) [0x112c899d0]
+                              3    ??? (libnss3.dylib + 220917) [0x112ca0ef5]
+                                3    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                  2    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                  1    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                10   ??? (XUL + 24673627) [0x12fda6d5b]
+                  10   ??? (XUL + 2815295) [0x12e8ce53f]
+                    10   ??? (XUL + 6699738) [0x12ec82ada]
+                      10   ??? (XUL + 6699234) [0x12ec828e2]
+                        10   sqlite3_exec + 843 (libnss3.dylib + 33659) [0x112c7337b]
+                          6    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                            6    ??? (libnss3.dylib + 246911) [0x112ca747f]
+                              6    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                                6    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                                  6    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                    6    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                      6    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                        5    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                        1    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                          4    sqlite3_step + 750 (libnss3.dylib + 28894) [0x112c720de]
+                            4    ??? (libnss3.dylib + 124588) [0x112c896ac]
+                              4    ??? (libnss3.dylib + 124864) [0x112c897c0]
+                                4    ??? (libnss3.dylib + 125392) [0x112c899d0]
+                                  3    ??? (libnss3.dylib + 220917) [0x112ca0ef5]
+                                    3    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                      3    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                                  1    ??? (libnss3.dylib + 220547) [0x112ca0d83]
+                                    1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                      1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                2    ??? (XUL + 97730522) [0x134352fda]
+                  2    ??? (XUL + 97726731) [0x13435210b]
+                    2    ??? (XUL + 2815295) [0x12e8ce53f]
+                      2    ??? (XUL + 6699738) [0x12ec82ada]
+                        2    ??? (XUL + 6699234) [0x12ec828e2]
+                          2    sqlite3_exec + 843 (libnss3.dylib + 33659) [0x112c7337b]
+                            2    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                              2    ??? (libnss3.dylib + 246911) [0x112ca747f]
+                                2    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                                  2    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                                    2    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                      2    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                        2    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                          2    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                2    ??? (XUL + 53926024) [0x13198c888]
+                  2    ??? (XUL + 6743817) [0x12ec8d709]
+                    2    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                      1    ??? (libnss3.dylib + 244027) [0x112ca693b]
+                        1    ??? (libnss3.dylib + 360343) [0x112cc2f97]
+                          1    ??? (libnss3.dylib + 185739) [0x112c9858b]
+                            1    ??? (libnss3.dylib + 186510) [0x112c9888e]
+                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                      1    ??? (libnss3.dylib + 238572) [0x112ca53ec]
+                        1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                          1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                            1    ??? (libnss3.dylib + 40639) [0x112c74ebf]
+                              1    ??? (libnss3.dylib + 191432) [0x112c99bc8]
+                                1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                  1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                2    ??? (XUL + 6725343) [0x12ec88edf]
+                  2    ??? (XUL + 6722279) [0x12ec882e7]
+                    2    ??? (XUL + 6701570) [0x12ec83202]
+                      2    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                        1    ??? (libnss3.dylib + 246911) [0x112ca747f]
+                          1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                            1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                              1    ??? (libnss3.dylib + 40639) [0x112c74ebf]
+                                1    ??? (libnss3.dylib + 191432) [0x112c99bc8]
+                                  1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                    1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                        1    ??? (libnss3.dylib + 238572) [0x112ca53ec]
+                          1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                            1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                              1    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                1    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                  1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                    1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 91463462) [0x133d58f26]
+                  1    ??? (XUL + 86403595) [0x133885a0b]
+                    1    ??? (XUL + 16829919) [0x12f62bddf]
+                      1    ??? (XUL + 5084285) [0x12eaf847d]
+                        1    ??? (XUL + 2481620) [0x12e87cdd4]
+                          1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                            1    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 53930289) [0x13198d931]
+                  1    ??? (XUL + 6743817) [0x12ec8d709]
+                    1    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                      1    ??? (libnss3.dylib + 238572) [0x112ca53ec]
+                        1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                          1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                            1    ??? (libnss3.dylib + 40639) [0x112c74ebf]
+                              1    ??? (libnss3.dylib + 191432) [0x112c99bc8]
+                                1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                  1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 41950924) [0x130e20ecc]
+                  1    ??? (XUL + 41947858) [0x130e202d2]
+                    1    ??? (XUL + 127141166) [0x135f5f52e]
+                      1    ??? (XUL + 127188634) [0x135f6ae9a]
+                        1    ??? (XUL + 127155232) [0x135f62c20]
+                          1    ??? (XUL + 127269563) [0x135f7eabb]
+                            1    ??? (XUL + 127269897) [0x135f7ec09]
+                              1    ??? (XUL + 6699738) [0x12ec82ada]
+                                1    ??? (XUL + 6699234) [0x12ec828e2]
+                                  1    sqlite3_exec + 843 (libnss3.dylib + 33659) [0x112c7337b]
+                                    1    sqlite3_step + 750 (libnss3.dylib + 28894) [0x112c720de]
+                                      1    ??? (libnss3.dylib + 124588) [0x112c896ac]
+                                        1    ??? (libnss3.dylib + 124864) [0x112c897c0]
+                                          1    ??? (libnss3.dylib + 125392) [0x112c899d0]
+                                            1    ??? (libnss3.dylib + 220917) [0x112ca0ef5]
+                                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                                1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 24671959) [0x12fda66d7]
+                  1    ??? (XUL + 6743817) [0x12ec8d709]
+                    1    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                      1    ??? (libnss3.dylib + 242512) [0x112ca6350]
+                        1    ??? (libnss3.dylib + 303264) [0x112cb50a0]
+                          1    ??? (libnss3.dylib + 335950) [0x112cbd04e]
+                            1    ??? (libnss3.dylib + 336800) [0x112cbd3a0]
+                              1    ??? (libnss3.dylib + 342910) [0x112cbeb7e]
+                                1    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                  1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                    1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 15076576) [0x12f47fce0]
+                  1    ??? (XUL + 15078085) [0x12f4802c5]
+                    1    ??? (XUL + 15078648) [0x12f4804f8]
+                      1    ??? (XUL + 71634842) [0x132a6ff9a]
+                        1    ??? (XUL + 2815295) [0x12e8ce53f]
+                          1    ??? (XUL + 6699738) [0x12ec82ada]
+                            1    ??? (XUL + 6699234) [0x12ec828e2]
+                              1    sqlite3_exec + 843 (libnss3.dylib + 33659) [0x112c7337b]
+                                1    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                                  1    ??? (libnss3.dylib + 246911) [0x112ca747f]
+                                    1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                                      1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                                        1    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                          1    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                            1    ??? (XUL + 6728284) [0x12ec89a5c]
+                                              1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                                1    <Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+                1    ??? (XUL + 6725388) [0x12ec88f0c]
+                  1    ??? (XUL + 6724173) [0x12ec88a4d]
+                    1    ??? (XUL + 53819818) [0x1319729aa]
+                      1    ??? (XUL + 6699234) [0x12ec828e2]
+                        1    sqlite3_exec + 843 (libnss3.dylib + 33659) [0x112c7337b]
+                          1    sqlite3_step + 260 (libnss3.dylib + 28404) [0x112c71ef4]
+                            1    ??? (libnss3.dylib + 246911) [0x112ca747f]
+                              1    ??? (libnss3.dylib + 209065) [0x112c9e0a9]
+                                1    ??? (libnss3.dylib + 42299) [0x112c7553b]
+                                  1    ??? (libnss3.dylib + 40279) [0x112c74d57]
+                                    1    ??? (libnss3.dylib + 187652) [0x112c98d04]
+                                      1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                                        1    <Non-Frontmost App, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated>
+        41   ??? (XUL + 50567284) [0x131658874]
+          41   ??? (XUL + 3490653) [0x12e97335d]
+            41   ??? (XUL + 3518944) [0x12e97a1e0]
+              41   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                1    <Non-Frontmost App>
+  10   start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    10   ??? (zen + 2515) [0x10a23e9d3]
+      10   ??? (XUL + 99075527) [0x13449b5c7]
+        10   ??? (XUL + 99074100) [0x13449b034]
+          10   ??? (XUL + 99071108) [0x13449a484]
+            10   ??? (XUL + 98326812) [0x1343e491c]
+              10   ??? (XUL + 19648207) [0x12f8dbecf]
+                10   ??? (XUL + 9250) [0x12e621422]
+                  10   -[NSApplication run] + 472 (AppKit + 190556) [0x7ff80c9d385c]
+                    10   ??? (XUL + 9335) [0x12e621477]
+                      10   -[NSApplication(NSEventRouting) nextEventMatchingMask:untilDate:inMode:dequeue:] + 67 (AppKit + 13547857) [0x7ff80d690951]
+                        10   -[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:] + 1265 (AppKit + 13549179) [0x7ff80d690e7b]
+                          10   _DPSNextEvent + 800 (AppKit + 252357) [0x7ff80c9e29c5]
+                            10   _DPSBlockUntilNextEventMatchingListInMode + 172 (AppKit + 7634836) [0x7ff80d0ecf94]
+                              10   _BlockUntilNextEventMatchingListInMode + 37 (HIToolbox + 2298058) [0x7ff815a3a0ca]
+                                10   ReceiveNextEventCommon + 599 (HIToolbox + 691277) [0x7ff8158b1c4d]
+                                  10   RunCurrentEventLoopInMode + 283 (HIToolbox + 678795) [0x7ff8158aeb8b]
+                                    10   _CFRunLoopRunSpecificWithOptions + 496 (CoreFoundation + 1323319) [0x7ff808c2c137]
+                                      10   __CFRunLoopRun + 916 (CoreFoundation + 503746) [0x7ff808b63fc2]
+                                        9    __CFRunLoopDoSources0 + 203 (CoreFoundation + 508682) [0x7ff808b6530a]
+                                          9    __CFRunLoopDoSource0 + 157 (CoreFoundation + 509258) [0x7ff808b6554a]
+                                            9    __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17 (CoreFoundation + 509352) [0x7ff808b655a8]
+                                              9    ??? (XUL + 19646015) [0x12f8db63f]
+                                                9    ??? (XUL + 5350316) [0x12eb393ac]
+                                                  9    ??? (XUL + 5314606) [0x12eb3082e]
+                                                    9    ??? (XUL + 5300824) [0x12eb2d258]
+                                                      9    ??? (XUL + 5154307) [0x12eb09603]
+                                                        9    ??? (XUL + 2538403) [0x12e88aba3]
+                                                          9    ??? (XUL + 4094041) [0x12ea06859]
+                                                            9    ??? (XUL + 2756646) [0x12e8c0026]
+                                                              8    ??? (XUL + 97490545) [0x134318671]
+                                                                8    ??? (XUL + 2756646) [0x12e8c0026]
+                                                                  8    ??? (XUL + 5464283) [0x12eb550db]
+                                                                    8    ??? (XUL + 5468645) [0x12eb561e5]
+                                                                      8    ??? (XUL + 6538783) [0x12ec5b61f]
+                                                                        8    ??? (XUL + 32954768) [0x13058c990]
+                                                                          8    ??? [0x2af17c4bc3be]
+                                                                            2    ??? [0x2af17c6765e0]
+                                                                              2    ??? [0x2af17c4ebf35]
+                                                                                2    ??? (XUL + 6576766) [0x12ec64a7e]
+                                                                                  2    ??? (XUL + 6569918) [0x12ec62fbe]
+                                                                                    2    ??? (XUL + 1177230) [0x12e73e68e]
+                                                                                      2    ??? (XUL + 126979771) [0x135f37ebb]
+                                                                                        2    ??? (XUL + 5101833) [0x12eafc909]
+                                                                                          2    ??? (XUL + 2481620) [0x12e87cdd4]
+                                                                                            2    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                              2    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                            2    ??? [0x2af17c62bb00]
+                                                                              2    ??? [0x2af17c4ef765]
+                                                                                2    ??? (XUL + 6576766) [0x12ec64a7e]
+                                                                                  2    ??? (XUL + 6569918) [0x12ec62fbe]
+                                                                                    2    ??? (XUL + 1177230) [0x12e73e68e]
+                                                                                      2    ??? (XUL + 126979771) [0x135f37ebb]
+                                                                                        2    ??? (XUL + 5101833) [0x12eafc909]
+                                                                                          2    ??? (XUL + 2481620) [0x12e87cdd4]
+                                                                                            2    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                              2    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                            2    ??? [0x2af17c5f3f20]
+                                                                              2    ??? [0x2af17c4ef765]
+                                                                                2    ??? (XUL + 6576766) [0x12ec64a7e]
+                                                                                  2    ??? (XUL + 6569918) [0x12ec62fbe]
+                                                                                    2    ??? (XUL + 1177230) [0x12e73e68e]
+                                                                                      2    ??? (XUL + 126979771) [0x135f37ebb]
+                                                                                        2    ??? (XUL + 5101833) [0x12eafc909]
+                                                                                          2    ??? (XUL + 2481620) [0x12e87cdd4]
+                                                                                            2    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                              2    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                            1    ??? [0x2af17c982b17]
+                                                                              1    ??? (XUL + 6576766) [0x12ec64a7e]
+                                                                                1    ??? (XUL + 6569918) [0x12ec62fbe]
+                                                                                  1    ??? (XUL + 1177230) [0x12e73e68e]
+                                                                                    1    ??? (XUL + 126979771) [0x135f37ebb]
+                                                                                      1    ??? (XUL + 5101833) [0x12eafc909]
+                                                                                        1    ??? (XUL + 2481620) [0x12e87cdd4]
+                                                                                          1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                            1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                                            1    ??? [0x2af17c5cbf30]
+                                                                              1    ??? [0x2af17c4ffad5]
+                                                                                1    ??? (XUL + 6576766) [0x12ec64a7e]
+                                                                                  1    ??? (XUL + 6569918) [0x12ec62fbe]
+                                                                                    1    ??? (XUL + 1177230) [0x12e73e68e]
+                                                                                      1    ??? (XUL + 126979771) [0x135f37ebb]
+                                                                                        1    ??? (XUL + 5101833) [0x12eafc909]
+                                                                                          1    ??? (XUL + 2481620) [0x12e87cdd4]
+                                                                                            1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                              1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                                              1    ??? (XUL + 2756646) [0x12e8c0026]
+                                                                1    ??? (XUL + 5464283) [0x12eb550db]
+                                                                  1    ??? (XUL + 5468645) [0x12eb561e5]
+                                                                    1    ??? (XUL + 6538783) [0x12ec5b61f]
+                                                                      1    ??? (XUL + 32954768) [0x13058c990]
+                                                                        1    ??? [0x2af17c4bc3be]
+                                                                          1    ??? [0x2af17c6765e0]
+                                                                            1    ??? [0x2af17c4ebf35]
+                                                                              1    ??? (XUL + 6576766) [0x12ec64a7e]
+                                                                                1    ??? (XUL + 6569918) [0x12ec62fbe]
+                                                                                  1    ??? (XUL + 1177230) [0x12e73e68e]
+                                                                                    1    ??? (XUL + 126979771) [0x135f37ebb]
+                                                                                      1    ??? (XUL + 5101833) [0x12eafc909]
+                                                                                        1    ??? (XUL + 2481620) [0x12e87cdd4]
+                                                                                          1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                            1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+                                        1    __CFRunLoopDoSources0 + 311 (CoreFoundation + 508790) [0x7ff808b65376]
+                                          1    __CFRunLoopDoSource0 + 157 (CoreFoundation + 509258) [0x7ff808b6554a]
+                                            1    __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 17 (CoreFoundation + 509352) [0x7ff808b655a8]
+                                              1    ??? (XUL + 19646015) [0x12f8db63f]
+                                                1    ??? (XUL + 5350316) [0x12eb393ac]
+                                                  1    ??? (XUL + 5314606) [0x12eb3082e]
+                                                    1    ??? (XUL + 5300824) [0x12eb2d258]
+                                                      1    ??? (XUL + 5154307) [0x12eb09603]
+                                                        1    ??? (XUL + 2538403) [0x12e88aba3]
+                                                          1    ??? (XUL + 4094041) [0x12ea06859]
+                                                            1    ??? (XUL + 2756646) [0x12e8c0026]
+                                                              1    ??? (XUL + 97490545) [0x134318671]
+                                                                1    ??? (XUL + 2756646) [0x12e8c0026]
+                                                                  1    ??? (XUL + 5464283) [0x12eb550db]
+                                                                    1    ??? (XUL + 5468645) [0x12eb561e5]
+                                                                      1    ??? (XUL + 6538783) [0x12ec5b61f]
+                                                                        1    ??? (XUL + 32954768) [0x13058c990]
+                                                                          1    ??? [0x2af17c4bc3be]
+                                                                            1    ??? [0x2af17c5f3f20]
+                                                                              1    ??? [0x2af17c4ef765]
+                                                                                1    ??? (XUL + 6576766) [0x12ec64a7e]
+                                                                                  1    ??? (XUL + 6569918) [0x12ec62fbe]
+                                                                                    1    ??? (XUL + 1177230) [0x12e73e68e]
+                                                                                      1    ??? (XUL + 126979771) [0x135f37ebb]
+                                                                                        1    ??? (XUL + 5101833) [0x12eafc909]
+                                                                                          1    ??? (XUL + 2481620) [0x12e87cdd4]
+                                                                                            1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                                                              1    <Effective Thread QoS User Interactive, Requested Thread QoS User Interactive>
+
+  Binary Images:
+           0x10a23e000 -        0x10a245fff  app.zen-browser.zen 1.21.16b (126.8.28) <BB3C119F-5292-3BBC-B881-A37080FD6666>  /Applications/Zen.app/Contents/MacOS/zen
+           0x112c6b000 -        0x112ef2fff  libnss3.dylib (0)                       <173C75CA-C9A5-320B-8E9E-DA4E5E72287B>  /Applications/Zen.app/Contents/MacOS/libnss3.dylib
+           0x12e61f000 -        0x138fadfff  XUL (0)                                 <8AEE1A3C-BE10-3605-9460-B861A5BE0DB1>  /Applications/Zen.app/Contents/MacOS/XUL
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                             <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)   <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff808aa4000 -     0x7ff808aafebf  libsystem_pthread.dylib (539.100.4)     <A55CF178-EA25-3CC0-8BCD-A4209F2ACD1D>  /usr/lib/system/libsystem_pthread.dylib
+        0x7ff808ae9000 -     0x7ff808fa6714  com.apple.CoreFoundation 6.9 (5026.6.7) <43436234-A738-3EBE-BD81-C7FBFF29035E>  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+        0x7ff80c9a5000 -     0x7ff80e1a1b16  com.apple.AppKit 6.9 (2685.70.101)      <583BDB03-AA3D-3E8E-8F9B-FB919CDB5EFB>  /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+        0x7ff815809000 -     0x7ff815ae5bce  com.apple.HIToolbox 2.1.1 (1250.1)      <064910B8-7724-3BE6-A40E-483AC18BA95E>  /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox

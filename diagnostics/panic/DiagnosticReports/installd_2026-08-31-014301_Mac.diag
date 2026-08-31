@@ -1,0 +1,680 @@
+Date/Time:        2026-08-30 23:17:01.525 +0800
+End time:         2026-08-31 01:42:51.233 +0800
+OS Version:       macOS 26.6.2 (Build 25G83)
+Architecture:     x86_64h
+Report Version:   72
+Incident Identifier: 769B4FBD-0DD4-45E3-AA47-1A0C80A4DB56
+Share With Devs:  Yes
+
+Data Source:      Microstackshots
+Shared Cache:     F25A411F-0E2B-394F-861B-412F1A52F90D slid base address 0x7ff805c04000, slide 0x5c04000
+
+Command:          installd
+Path:             /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/Resources/installd
+Resource Coalition: "com.apple.installd"(699)
+On Behalf Of:     791 samples appstoreagent [2953] (791 samples originated by App Store [3479, 11048, 17008])
+Architecture:     x86_64
+Parent:           launchd [1]
+PID:              589
+
+Event:            disk writes
+Action taken:     none
+Writes:           8589.96 MB of file backed memory dirtied over 8750 seconds (981.74 KB per second average), exceeding limit of 99.42 KB per second over 86400 seconds
+Writes limit:     8589.93 MB
+Limit duration:   86400s
+Writes caused:    8589.96 MB
+Writes duration:  8750s
+Duration:         8749.71s
+Steps:            5801 (10.49 MB/step)
+
+Hardware model:   iMac20,1
+Active cpus:      12
+Memory size:      16 GB
+HW page size:     4096
+VM page size:     4096
+Shared cache residency: 8.93% (493.48 MB / 5528.70 MB)
+Boot args:        -v -ibtcompatbeta revpatch=sbvmm agdpmod=pikera keepsyms=1 debug=0x100
+
+Time Since Boot:  3825s
+Time Awake Since Boot: 3825s
+Time Since Wake:  n/a (machine hasn't slept)
+
+Total CPU Time:   3464.345s
+Advisory levels:  Battery -> 3, User -> 2, ThermalPressure -> 0, Combined -> 2
+Free disk space:  888.49 GB/945.87 GB, low space threshold 3072 MB
+Vnodes Available: 73.56% (193595/263168)
+Models:           none
+
+Preferred User Language: zh-Hans-CN
+Country Code:     CN
+Keyboards:        ABC
+OS Cryptex File Extents: 1
+
+Heaviest stack for the target process:
+  791  start_wqthread + 15 (libsystem_pthread.dylib + 6171) [0x7ff808aa581b]
+  780  _pthread_wqthread + 298 (libsystem_pthread.dylib + 10271) [0x7ff808aa681f]
+  780  _dispatch_workloop_worker_thread + 867 (libdispatch.dylib + 70581) [0x7ff8089003b5]
+  780  _dispatch_root_queue_drain_deferred_wlh + 275 (libdispatch.dylib + 72179) [0x7ff8089009f3]
+  780  _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+  780  _dispatch_lane_serial_drain + 319 (libdispatch.dylib + 32815) [0x7ff8088f702f]
+  780  _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+  780  _dispatch_lane_serial_drain + 1040 (libdispatch.dylib + 33536) [0x7ff8088f7300]
+  780  _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+  780  _dispatch_call_block_and_release + 12 (libdispatch.dylib + 5654) [0x7ff8088f0616]
+  780  ??? (AppleFSCompression + 18855) [0x7ff8184cb9a7]
+  780  ??? (AppleFSCompression + 18495) [0x7ff8184cb83f]
+  499  ??? (AppleFSCompression + 21993) [0x7ff8184cc5e9]
+  499  pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+
+
+Powerstats for:   installd [589]
+UUID:             BD619862-C50C-3E94-9432-F12AACBEE4BF
+Path:             /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/Resources/installd
+Resource Coalition: 791 samples "com.apple.installd"(699)
+On Behalf Of:     791 samples appstoreagent [2953] (791 samples originated by App Store [3479, 11048, 17008])
+Architecture:     x86_64
+Parent:           launchd [1]
+UID:              0
+Sudden Term:      Tracked (allows idle exit)
+Footprint:        304.59 MB -> 470.69 MB (+166.10 MB) (max 605.88 MB )
+Pageins:          6874 pages
+Start time:       2026-08-30 23:17:01.601 +0800
+End time:         2026-08-31 01:42:51.230 +0800
+Num samples:      791 (14%)
+Num threads:      112
+Primary state:    791 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Utility, Requested Thread QoS Utility, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 791 samples Active
+Power Source:     0 samples on Battery, 791 samples on AC
+  791  start_wqthread + 15 (libsystem_pthread.dylib + 6171) [0x7ff808aa581b]
+    780  _pthread_wqthread + 298 (libsystem_pthread.dylib + 10271) [0x7ff808aa681f]
+      780  _dispatch_workloop_worker_thread + 867 (libdispatch.dylib + 70581) [0x7ff8089003b5]
+        780  _dispatch_root_queue_drain_deferred_wlh + 275 (libdispatch.dylib + 72179) [0x7ff8089009f3]
+          780  _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+            780  _dispatch_lane_serial_drain + 319 (libdispatch.dylib + 32815) [0x7ff8088f702f]
+              780  _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+                780  _dispatch_lane_serial_drain + 1040 (libdispatch.dylib + 33536) [0x7ff8088f7300]
+                  780  _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                    780  _dispatch_call_block_and_release + 12 (libdispatch.dylib + 5654) [0x7ff8088f0616]
+                      780  ??? (AppleFSCompression + 18855) [0x7ff8184cb9a7]
+                        780  ??? (AppleFSCompression + 18495) [0x7ff8184cb83f]
+                          499  ??? (AppleFSCompression + 21993) [0x7ff8184cc5e9]
+                            499  pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              232  <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                              208  <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+                              59   <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                          190  ??? (AppleFSCompression + 20239) [0x7ff8184cbf0f]
+                            190  pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              125  <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+                              47   <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                              18   <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                          39   ??? (AppleFSCompression + 27561) [0x7ff8184cdba9]
+                            39   pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              22   <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+                              14   <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                              3    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                          30   ??? (AppleFSCompression + 27069) [0x7ff8184cd9bd]
+                            30   pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              17   <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+                              12   <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                              1    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                          13   ??? (AppleFSCompression + 21848) [0x7ff8184cc558]
+                            13   pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              9    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                              3    <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+                              1    <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                          3    ??? (AppleFSCompression + 23394) [0x7ff8184ccb62]
+                            3    fsetxattr + 10 (libsystem_kernel.dylib + 20094) [0x7ff808a69e7e]
+                              3    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                          3    ??? (AppleFSCompression + 21817) [0x7ff8184cc539]
+                            3    __fcntl + 10 (libsystem_kernel.dylib + 5538) [0x7ff808a665a2]
+                              2    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                              1    <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                          1    ??? (AppleFSCompression + 26196) [0x7ff8184cd654]
+                            1    __fcntl + 10 (libsystem_kernel.dylib + 5538) [0x7ff808a665a2]
+                              1    <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                          1    ??? (AppleFSCompression + 24714) [0x7ff8184cd08a]
+                            1    __fcntl + 10 (libsystem_kernel.dylib + 5538) [0x7ff808a665a2]
+                              1    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                          1    ??? (AppleFSCompression + 22088) [0x7ff8184cc648]
+                            1    pwrite + 10 (libsystem_kernel.dylib + 13978) [0x7ff808a6869a]
+                              1    <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+    11   _pthread_wqthread + 233 (libsystem_pthread.dylib + 10206) [0x7ff808aa67de]
+      11   _dispatch_worker_thread2 + 179 (libdispatch.dylib + 68834) [0x7ff8088ffce2]
+        11   _dispatch_root_queue_drain + 84 (libdispatch.dylib + 67646) [0x7ff8088ff83e]
+          11   _dispatch_root_queue_drain.cold.4 + 749 (libdispatch.dylib + 207947) [0x7ff808921c4b]
+            11   _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+              11   _dispatch_block_async_invoke2 + 85 (libdispatch.dylib + 57780) [0x7ff8088fd1b4]
+                11   -[PKInstall _installMain:] + 3197 (PackageKit + 149995) [0x7ff9112aa9eb]
+                  11   -[PKInstallOperationController run] + 252 (PackageKit + 435080) [0x7ff9112f0388]
+                    11   -[PKInstallOperation start] + 79 (PackageKit + 438969) [0x7ff9112f12b9]
+                      11   -[NSOperation start] + 726 (Foundation + 252259) [0x7ff809db6963]
+                        11   __NSOPERATION_IS_INVOKING_MAIN__ + 17 (Foundation + 255658) [0x7ff809db76aa]
+                          10   -[PKExtractInstallOperation main] + 540 (PackageKit + 452755) [0x7ff9112f4893]
+                            7    -[PKExtractInstallOperation _extractAllSpecifiersOnceAndReturnFailingSpecifier:andError:] + 655 (PackageKit + 451939) [0x7ff9112f4563]
+                              7    -[PKExtractInstallOperation _extractPayloadForPackageSpecifier:error:] + 1129 (PackageKit + 450952) [0x7ff9112f4188]
+                                7    -[PKPayloadCopier run] + 3728 (PackageKit + 535973) [0x7ff911308da5]
+                                  7    BOMCopierCopyWithOptions + 1202 (Bom + 5702) [0x7ff81ab8d646]
+                                    7    _BOMCopierCopyFromCPIO + 398 (Bom + 207387) [0x7ff81abbea1b]
+                                      7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                        7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                          7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                            7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                              7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                  7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                    7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                      7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                        7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                          7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                            7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                              7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                  7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                    7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                      7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                        7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                          7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                            7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                              7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                  7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                    7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                      7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                        7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                          7    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                            7    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                              4    _copyFromCPIO + 1205 (Bom + 232581) [0x7ff81abc4c85]
+                                                                                                4    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                                                                                  3    link + 10 (libsystem_kernel.dylib + 17618) [0x7ff808a694d2]
+                                                                                                    3    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                                                                                                  1    _copyDataFork + 4711 (Bom + 225606) [0x7ff81abc3146]
+                                                                                                    1    BOMFileOpenWithSys + 96 (Bom + 24818) [0x7ff81ab920f2]
+                                                                                                      1    _open_with_static_content + 30 (PackageKit + 125009) [0x7ff9112a4851]
+                                                                                                        1    __open + 10 (libsystem_kernel.dylib + 4914) [0x7ff808a66332]
+                                                                                                          1    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                                                                                              3    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                                3    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                                  2    _copyFromCPIO + 1205 (Bom + 232581) [0x7ff81abc4c85]
+                                                                                                    2    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                                                                                      2    link + 10 (libsystem_kernel.dylib + 17618) [0x7ff808a694d2]
+                                                                                                        2    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                                                                                                  1    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                                    1    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                                      1    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                                        1    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                                          1    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                                            1    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                                              1    _copyFromCPIO + 1151 (Bom + 232527) [0x7ff81abc4c4f]
+                                                                                                                1    _copyDir + 1738 (Bom + 18924) [0x7ff81ab909ec]
+                                                                                                                  1    _copyFromCPIO + 1205 (Bom + 232581) [0x7ff81abc4c85]
+                                                                                                                    1    _copyFile + 2583 (Bom + 23342) [0x7ff81ab91b2e]
+                                                                                                                      1    __rename + 10 (libsystem_kernel.dylib + 14770) [0x7ff808a689b2]
+                                                                                                                        1    <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+                            3    -[PKExtractInstallOperation _extractAllSpecifiersOnceAndReturnFailingSpecifier:andError:] + 550 (PackageKit + 451834) [0x7ff9112f44fa]
+                              3    -[PKExtractInstallOperation _extractBomForPackageSpecifier:error:] + 163 (PackageKit + 447958) [0x7ff9112f35d6]
+                                3    -[NSData(NSData) writeToFile:options:error:] + 159 (Foundation + 260177) [0x7ff809db8851]
+                                  3    @objc static NSData._writeData(toPath:data:options:reportProgress:) + 86 (Foundation + 4411206) [0x7ff80a1adf46]
+                                    3    specialized static NSData._writeData(toPath:data:options:reportProgress:) + 1081 (Foundation + 4481113) [0x7ff80a1bf059]
+                                      3    closure #1 in writeToFileNoAux(path:buffer:options:attributes:reportProgress:) + 763 (Foundation + 4467387) [0x7ff80a1bbabb]
+                                        3    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                          1    <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+                                          1    <on behalf of appstoreagent [2953] (originated by App Store [11048])>
+                                          1    <on behalf of appstoreagent [2953] (originated by App Store [17008])>
+                          1    -[PKWriteReceiptsInstallOperation main] + 431 (PackageKit + 489266) [0x7ff9112fd732]
+                            1    -[PKWriteReceiptsInstallOperation _saveReceiptForPackageSpecifier:withMasterBOM:error:] + 1660 (PackageKit + 488649) [0x7ff9112fd4c9]
+                              1    -[PKMutableReceipt _writeToDirectory:forSystemContent:error:] + 322 (PackageKit + 285795) [0x7ff9112cbc63]
+                                1    -[NSData(NSData) writeToFile:options:error:] + 159 (Foundation + 260177) [0x7ff809db8851]
+                                  1    @objc static NSData._writeData(toPath:data:options:reportProgress:) + 86 (Foundation + 4411206) [0x7ff80a1adf46]
+                                    1    specialized static NSData._writeData(toPath:data:options:reportProgress:) + 1081 (Foundation + 4481113) [0x7ff80a1bf059]
+                                      1    closure #1 in writeToFileNoAux(path:buffer:options:attributes:reportProgress:) + 763 (Foundation + 4467387) [0x7ff80a1bbabb]
+                                        1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                          1    <on behalf of appstoreagent [2953] (originated by App Store [3479])>
+
+  Binary Images:
+           0x102734000 -                ???  installd                                     <BD619862-C50C-3E94-9432-F12AACBEE4BF>  /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/Resources/installd
+        0x7ff8088ef000 -     0x7ff808936d91  libdispatch.dylib (1542.160.2)               <EEDF9EFE-1B9B-39AC-B37F-BA6F1FA18CEC>  /usr/lib/system/libdispatch.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)        <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff808aa4000 -     0x7ff808aafebf  libsystem_pthread.dylib (539.100.4)          <A55CF178-EA25-3CC0-8BCD-A4209F2ACD1D>  /usr/lib/system/libsystem_pthread.dylib
+        0x7ff809d79000 -     0x7ff80adb4702  com.apple.Foundation 6.9 (5026.6.7)          <44158FA3-1C9F-370D-BE8D-650DAB02BC40>  /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+        0x7ff8184c7000 -     0x7ff8184d1b7f  com.apple.AppleFSCompression 174.160.2 (1.0) <FB0550FE-93AC-3346-981B-B75419DAD2E5>  /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+        0x7ff81ab8c000 -     0x7ff81ac082c7  com.apple.bom 14.0 (277)                     <294A0B9C-8D6A-34FB-B03D-D7F7641C99BD>  /System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+        0x7ff911286000 -     0x7ff911360e54  com.apple.PackageKit 3.0 (1491.160.2)        <B7537A1F-4048-3CC3-B33D-6C1C7185954E>  /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/PackageKit
+
+
+Powerstats for:   appstoreagent
+UUID:             595918DA-032E-3B3A-830D-686F917E15E0
+Path:             /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Support/appstoreagent
+Codesigning ID:   com.apple.appstoreagent
+Resource Coalition: 1185 samples "com.apple.appstoreagent"(2882)
+On Behalf Of:     1185 samples App Store [3479, 11048, 17008] (1185 samples originated by App Store [3479, 11048, 17008])
+Architecture:     x86_64
+Pageins:          528 pages
+Start time:       2026-08-30 23:19:42.307 +0800
+End time:         2026-08-31 01:40:02.955 +0800
+Num samples:      1185 (20%)
+Primary state:    1185 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Initiated, Requested Thread QoS User Initiated, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 1185 samples Active
+Power Source:     0 samples on Battery, 1185 samples on AC
+  1051  completeTaskWithClosure(swift::AsyncContext*, swift::SwiftError*) + 0 (libswift_Concurrency.dylib + 45504) [0x7ffe11c3f1c0]
+    1051  ??? (appstoreagent + 224832) [0x10a791e40]
+      1051  ??? (appstoreagent + 768992) [0x10a816be0]
+        526   ??? (appstoreagent + 75872) [0x10a76d860]
+          526   ??? (appstoreagent + 1031104) [0x10a856bc0]
+            526   ??? (appstoreagent + 1088576) [0x10a864c40]
+              525   ??? (appstoreagent + 1092015) [0x10a8659af]
+                525   ??? (appstoreagent + 1088029) [0x10a864a1d]
+                  525   fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                    525   __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                      525   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                        288   <on behalf of App Store [17008] (originated by App Store [17008])>
+                        143   <on behalf of App Store [3479] (originated by App Store [3479])>
+                        94    <on behalf of App Store [11048] (originated by App Store [11048])>
+              1     ??? (appstoreagent + 1090276) [0x10a8652e4]
+                1     ??? (appstoreagent + 142103) [0x10a77db17]
+                  1     fseek + 67 (libsystem_c.dylib + 89994) [0x7ff80894ff8a]
+                    1     _fseeko + 852 (libsystem_c.dylib + 216882) [0x7ff80896ef32]
+                      1     __sflush + 96 (libsystem_c.dylib + 70850) [0x7ff80894b4c2]
+                        1     __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                          1     <on behalf of App Store [17008] (originated by App Store [17008])>
+        525   ??? (appstoreagent + 302816) [0x10a7a4ee0]
+          525   ??? (appstoreagent + 75872) [0x10a76d860]
+            525   ??? (appstoreagent + 302784) [0x10a7a4ec0]
+              525   ??? (appstoreagent + 1108640) [0x10a869aa0]
+                525   ??? (appstoreagent + 302848) [0x10a7a4f00]
+                  525   ??? (appstoreagent + 296720) [0x10a7a3710]
+                    525   ??? (appstoreagent + 300207) [0x10a7a44af]
+                      478   ??? (appstoreagent + 1087827) [0x10a864953]
+                        478   fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                          478   __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                            478   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                              253   <on behalf of App Store [17008] (originated by App Store [17008])>
+                              128   <on behalf of App Store [3479] (originated by App Store [3479])>
+                              97    <on behalf of App Store [11048] (originated by App Store [11048])>
+                      47    ??? (appstoreagent + 1086993) [0x10a864611]
+                        47    fseek + 67 (libsystem_c.dylib + 89994) [0x7ff80894ff8a]
+                          47    _fseeko + 852 (libsystem_c.dylib + 216882) [0x7ff80896ef32]
+                            47    __sflush + 96 (libsystem_c.dylib + 70850) [0x7ff80894b4c2]
+                              47    __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                27    <on behalf of App Store [17008] (originated by App Store [17008])>
+                                14    <on behalf of App Store [3479] (originated by App Store [3479])>
+                                6     <on behalf of App Store [11048] (originated by App Store [11048])>
+  134   start_wqthread + 15 (libsystem_pthread.dylib + 6171) [0x7ff808aa581b]
+    133   _pthread_wqthread + 298 (libsystem_pthread.dylib + 10271) [0x7ff808aa681f]
+      133   _dispatch_workloop_worker_thread + 867 (libdispatch.dylib + 70581) [0x7ff8089003b5]
+        133   _dispatch_root_queue_drain_deferred_wlh + 275 (libdispatch.dylib + 72179) [0x7ff8089009f3]
+          133   _dispatch_lane_invoke + 382 (libdispatch.dylib + 35909) [0x7ff8088f7c45]
+            133   _dispatch_lane_serial_drain + 775 (libdispatch.dylib + 33271) [0x7ff8088f71f7]
+              133   _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                133   _dispatch_call_block_and_release + 12 (libdispatch.dylib + 5654) [0x7ff8088f0616]
+                  132   ??? (appstoreagent + 4996935) [0x10ac1ef47]
+                    132   ??? (appstoreagent + 3299571) [0x10aa808f3]
+                      132   CFWriteStreamWrite + 268 (CoreFoundation + 335244) [0x7ff808b3ad8c]
+                        132   fileWrite + 19 (CoreFoundation + 883470) [0x7ff808bc0b0e]
+                          132   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                            132   <on behalf of App Store [11048] (originated by App Store [11048])>
+                  1     ??? (appstoreagent + 698153) [0x10a805729]
+                    1     ??? (appstoreagent + 127800) [0x10a77a338]
+                      1     ??? (appstoreagent + 119521) [0x10a7782e1]
+                        1     ??? (appstoreagent + 119245) [0x10a7781cd]
+                          1     ??? (appstoreagent + 122085) [0x10a778ce5]
+                            1     Data.write(to:options:) + 4478 (Foundation + 4257774) [0x7ff80a1887ee]
+                              1     closure #1 in writeToFileAux(path:buffer:options:attributes:reportProgress:) + 3269 (Foundation + 4423509) [0x7ff80a1b0f55]
+                                1     write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                  1     <on behalf of App Store [3479] (originated by App Store [3479])>
+    1     _pthread_wqthread + 233 (libsystem_pthread.dylib + 10206) [0x7ff808aa67de]
+      1     _dispatch_worker_thread2 + 179 (libdispatch.dylib + 68834) [0x7ff8088ffce2]
+        1     _dispatch_root_queue_drain + 84 (libdispatch.dylib + 67646) [0x7ff8088ff83e]
+          1     _dispatch_root_queue_drain.cold.4 + 366 (libdispatch.dylib + 207564) [0x7ff808921acc]
+            1     _dispatch_async_redirect_invoke + 698 (libdispatch.dylib + 17810) [0x7ff8088f3592]
+              1     _dispatch_continuation_pop + 518 (libdispatch.dylib + 20085) [0x7ff8088f3e75]
+                1     _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                  1     _dispatch_block_async_invoke2 + 85 (libdispatch.dylib + 57780) [0x7ff8088fd1b4]
+                    1     __NSOQSchedule_f + 182 (Foundation + 251209) [0x7ff809db6549]
+                      1     __NSOPERATIONQUEUE_IS_STARTING_AN_OPERATION__ + 17 (Foundation + 251518) [0x7ff809db667e]
+                        1     ??? (appstoreagent + 4370131) [0x10ab85ed3]
+                          1     ??? (appstoreagent + 4537214) [0x10abaeb7e]
+                            1     ??? (appstoreagent + 4534624) [0x10abae160]
+                              1     ??? (appstoreagent + 4536890) [0x10abaea3a]
+                                1     ??? (appstoreagent + 4163750) [0x10ab538a6]
+                                  1     ??? (appstoreagent + 5002925) [0x10ac206ad]
+                                    1     ??? (appstoreagent + 5003365) [0x10ac20865]
+                                      1     _dispatch_sync_f_slow + 191 (libdispatch.dylib + 58543) [0x7ff8088fd4af]
+                                        1     _dispatch_sync_invoke_and_complete_recurse + 65 (libdispatch.dylib + 59873) [0x7ff8088fd9e1]
+                                          1     _dispatch_client_callout + 6 (libdispatch.dylib + 96434) [0x7ff8089068b2]
+                                            1     ??? (appstoreagent + 5003071) [0x10ac2073f]
+                                              1     ??? (appstoreagent + 5003259) [0x10ac207fb]
+                                                1     ??? (appstoreagent + 4436439) [0x10ab961d7]
+                                                  1     ??? (appstoreagent + 4435300) [0x10ab95d64]
+                                                    1     ??? (appstoreagent + 4437248) [0x10ab96500]
+                                                      1     sqlite3_step + 1120 (libsqlite3.dylib + 225632) [0x7ff810777160]
+                                                        1     sqlite3VdbeExec + 61671 (libsqlite3.dylib + 292503) [0x7ff810787697]
+                                                          1     sqlite3VdbeHalt + 2428 (libsqlite3.dylib + 105804) [0x7ff810759d4c]
+                                                            1     vdbeCommit + 1184 (libsqlite3.dylib + 321296) [0x7ff81078e710]
+                                                              1     sqlite3BtreeCommitPhaseOne + 124 (libsqlite3.dylib + 322668) [0x7ff81078ec6c]
+                                                                1     sqlite3PagerCommitPhaseOne + 403 (libsqlite3.dylib + 401811) [0x7ff8107a2193]
+                                                                  1     pagerWalFrames + 624 (libsqlite3.dylib + 815952) [0x7ff810807350]
+                                                                    1     unixWrite + 148 (libsqlite3.dylib + 402612) [0x7ff8107a24b4]
+                                                                      1     guarded_pwrite_np + 10 (libsystem_kernel.dylib + 14338) [0x7ff808a68802]
+                                                                        1     <on behalf of App Store [3479] (originated by App Store [3479])>
+
+  Binary Images:
+           0x10a75b000 -        0x10ad9afff  appstoreagent (12.6.7)                  <595918DA-032E-3B3A-830D-686F917E15E0>  /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Support/appstoreagent
+        0x7ff8088ef000 -     0x7ff808936d91  libdispatch.dylib (1542.160.2)          <EEDF9EFE-1B9B-39AC-B37F-BA6F1FA18CEC>  /usr/lib/system/libdispatch.dylib
+        0x7ff80893a000 -     0x7ff8089c1e9f  libsystem_c.dylib (1752.160.4)          <D8E26E42-0A43-3361-B0A8-B45C3BB10F19>  /usr/lib/system/libsystem_c.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)   <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff808aa4000 -     0x7ff808aafebf  libsystem_pthread.dylib (539.100.4)     <A55CF178-EA25-3CC0-8BCD-A4209F2ACD1D>  /usr/lib/system/libsystem_pthread.dylib
+        0x7ff808ae9000 -     0x7ff808fa6714  com.apple.CoreFoundation 6.9 (5026.6.7) <43436234-A738-3EBE-BD81-C7FBFF29035E>  /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+        0x7ff809d79000 -     0x7ff80adb4702  com.apple.Foundation 6.9 (5026.6.7)     <44158FA3-1C9F-370D-BE8D-650DAB02BC40>  /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+        0x7ff810740000 -     0x7ff8109300bf  libsqlite3.dylib (382)                  <ADCB4D91-1E45-32D4-8DBF-16AADB0B5D8F>  /usr/lib/libsqlite3.dylib
+        0x7ffe11c34000 -     0x7ffe11ca2ec5  libswift_Concurrency.dylib (6.3.2.1.11) <2069030D-9674-3F7A-B86D-18D0302979A4>  /usr/lib/swift/libswift_Concurrency.dylib
+
+
+Powerstats for:   ditto
+UUID:             49AF0BD3-1B39-379E-93E4-0D5494BCF278
+Path:             /usr/bin/ditto
+Resource Coalition: 430 samples "com.apple.Terminal"(3194), 9 samples "com.openai.codex"(5973)
+Architecture:     x86_64
+Pageins:          316 pages
+Start time:       2026-08-30 23:49:28.390 +0800
+End time:         2026-08-31 01:32:34.161 +0800
+Num samples:      439 (8%)
+Primary state:    439 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 439 samples Active
+Power Source:     0 samples on Battery, 439 samples on AC
+  439  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    439  ??? (ditto + 7395) [0x103bc8ce3]
+      418  BOMCopierCopyWithOptions + 1094 (Bom + 5594) [0x7ff81ab8d5da]
+        418  _BOMCopierCopyFromFilesystem + 2480 (Bom + 205945) [0x7ff81abbe479]
+          397  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+            397  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+              391  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                391  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                  390  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                    390  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                      213  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                        213  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                          200  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                            200  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                              174  _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                174  _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                  90   _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                    90   _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                      56   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                        55   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                          55   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                            55   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                              55   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                55   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                        1    _copyFile + 1782 (Bom + 22541) [0x7ff81ab9180d]
+                                          1    setxattr + 10 (libsystem_kernel.dylib + 14598) [0x7ff808a68906]
+                                      33   _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                        33   _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                          17   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                            17   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                              17   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                                17   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                                  17   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                    17   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                          16   _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                            16   _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                              9    _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                                9    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                                  9    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                                    9    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                                      9    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                        9    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                              7    _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                                7    _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                                  4    _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                                    4    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                                      4    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                                        4    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                                          4    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                            4    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                                  3    _copyFromDirToDir + 2298 (Bom + 214068) [0x7ff81abc0434]
+                                                    3    _copyDir + 1680 (Bom + 18866) [0x7ff81ab909b2]
+                                                      3    _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                                        3    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                                          3    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                                            3    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                                              3    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                                                3    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                                      1    _copyFromDirToDir + 2201 (Bom + 213971) [0x7ff81abc03d3]
+                                        1    symlink + 10 (libsystem_kernel.dylib + 21358) [0x7ff808a6a36e]
+                                  84   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                    84   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                      84   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                        84   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                          84   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                            84   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                              26   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                                26   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                  26   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                    26   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                      26   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                        26   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                          13   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                            13   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                              13   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                13   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                  13   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                    13   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                      177  _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                        177  _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                          177  _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                            177  _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                              177  _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                177  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                  1    _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                    1    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                      1    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                        1    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                          1    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                            1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+              6    _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+                6    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                  6    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                    6    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                      6    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                        6    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+          21   _copyFromDirToDir + 2361 (Bom + 214131) [0x7ff81abc0473]
+            21   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+              21   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                21   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                  21   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                    21   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+      21   BOMCopierCopyWithOptions + 1174 (Bom + 5674) [0x7ff81ab8d62a]
+        21   _BOMCopierCopyFromPKZip + 803 (Bom + 208595) [0x7ff81abbeed3]
+          21   _copyFromPKZip + 1365 (Bom + 11393) [0x7ff81ab8ec81]
+            21   _copyDir + 1709 (Bom + 18895) [0x7ff81ab909cf]
+              21   _copyFromPKZip + 1365 (Bom + 11393) [0x7ff81ab8ec81]
+                21   _copyDir + 1709 (Bom + 18895) [0x7ff81ab909cf]
+                  21   _copyFromPKZip + 1365 (Bom + 11393) [0x7ff81ab8ec81]
+                    21   _copyDir + 1709 (Bom + 18895) [0x7ff81ab909cf]
+                      14   _copyFromPKZip + 1287 (Bom + 11315) [0x7ff81ab8ec33]
+                        14   _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                          14   _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                            14   _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                              14   _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                14   write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                      7    _copyFromPKZip + 1365 (Bom + 11393) [0x7ff81ab8ec81]
+                        7    _copyDir + 1709 (Bom + 18895) [0x7ff81ab909cf]
+                          5    _copyFromPKZip + 1287 (Bom + 11315) [0x7ff81ab8ec33]
+                            5    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                              5    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                5    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                  5    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                    5    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                          2    _copyFromPKZip + 1365 (Bom + 11393) [0x7ff81ab8ec81]
+                            2    _copyDir + 1709 (Bom + 18895) [0x7ff81ab909cf]
+                              1    _copyFromPKZip + 1365 (Bom + 11393) [0x7ff81ab8ec81]
+                                1    _copyDir + 1709 (Bom + 18895) [0x7ff81ab909cf]
+                                  1    _copyFromPKZip + 1287 (Bom + 11315) [0x7ff81ab8ec33]
+                                    1    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                      1    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                        1    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                          1    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                            1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                              1    _copyFromPKZip + 1287 (Bom + 11315) [0x7ff81ab8ec33]
+                                1    _copyFile + 1089 (Bom + 21848) [0x7ff81ab91558]
+                                  1    _copyDataFork + 6650 (Bom + 227545) [0x7ff81abc38d9]
+                                    1    _executeBomCopySpecification + 1057 (Bom + 27362) [0x7ff81ab92ae2]
+                                      1    _BOMFileDirectWrite + 95 (Bom + 28839) [0x7ff81ab930a7]
+                                        1    write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+
+  Binary Images:
+           0x103bc7000 -                ???  ditto                                 <49AF0BD3-1B39-379E-93E4-0D5494BCF278>  /usr/bin/ditto
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                           <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14) <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff81ab8c000 -     0x7ff81ac082c7  com.apple.bom 14.0 (277)              <294A0B9C-8D6A-34FB-B03D-D7F7641C99BD>  /System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+
+
+Powerstats for:   Doubao
+UUID:             4C4C44A4-5555-3144-A1A8-27528DC89E8F
+Path:             /private/var/folders/*/Doubao.app/Contents/MacOS/Doubao
+Identifier:       com.bot.pc.doubao
+Version:          2.26.10 (2.26.10)
+Team ID:          96L78H6LMH
+Resource Coalition: 269 samples 3522, 136 samples 5166
+Architecture:     x86_64
+Start time:       2026-08-30 23:27:33.458 +0800
+End time:         2026-08-31 00:56:24.618 +0800
+Num samples:      405 (7%)
+Primary state:    283 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS User Interactive, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 405 samples Active
+Power Source:     0 samples on Battery, 405 samples on AC
+  405  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    405  main + 40 (Doubao + 52456) [0x1004cece8]
+      405  main + 937 (Doubao + 53353) [0x1004cf069]
+        405  ChatAppStart + 4048 (Doubao Browser Framework + 15632) [0x120d2ad10]
+          405  ChromeMain + 140641742 (Doubao Browser Framework + 140671118) [0x12934e88e]
+            271  ChromeMain + 140504017 (Doubao Browser Framework + 140533393) [0x12932ce91]
+              271  ChromeMain + 153087905 (Doubao Browser Framework + 153117281) [0x129f2d261]
+                271  ChromeMain + 153075874 (Doubao Browser Framework + 153105250) [0x129f2a362]
+                  271  ChromeMain + 65914098 (Doubao Browser Framework + 65943474) [0x124c0a7b2]
+                    271  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                      81   <Frontmost App>
+            134  ChromeMain + 140504088 (Doubao Browser Framework + 140533464) [0x12932ced8]
+              134  ChromeMain + 153087905 (Doubao Browser Framework + 153117281) [0x129f2d261]
+                134  ChromeMain + 153075874 (Doubao Browser Framework + 153105250) [0x129f2a362]
+                  134  ChromeMain + 65914098 (Doubao Browser Framework + 65943474) [0x124c0a7b2]
+                    134  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+                      41   <Frontmost App>
+
+  Binary Images:
+           0x1004c2000 -        0x10062cfff  com.bot.pc.doubao 2.26.10 (2.26.10)                           <4C4C44A4-5555-3144-A1A8-27528DC89E8F>  /private/var/folders/*/Doubao.app/Contents/MacOS/Doubao
+           0x120d27000 -        0x130f84fff  com.bot.pc.doubao.browser.framework 147.0.7727.149 (7727.149) <4C4C44A3-5555-3144-A194-CE7D46E6F92B>  /private/var/folders/*/Doubao.app/Contents/Helpers/Doubao Browser.app/Contents/Frameworks/Doubao Browser Framework.framework/Versions/147.0.7727.149/Doubao Browser Framework
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                                                   <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14)                         <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+
+
+Powerstats for:   curl
+UUID:             E0D21AED-4656-3F1A-8FAB-52F6D9FEE43A
+Path:             /usr/bin/curl
+Codesigning ID:   com.apple.curl
+Resource Coalition: 403 samples "com.apple.Terminal"(3194), 1 sample "dev.zcode.app"(4553)
+Architecture:     x86_64
+Start time:       2026-08-30 23:35:12.500 +0800
+End time:         2026-08-31 01:41:44.054 +0800
+Num samples:      404 (7%)
+Primary state:    404 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 404 samples Active
+Power Source:     0 samples on Battery, 404 samples on AC
+  404  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    404  ??? (curl + 44032) [0x1009a8c00]
+      404  ??? (curl + 45908) [0x1009a9354]
+        403  ??? (curl + 47202) [0x1009a9862]
+          403  curl_easy_perform + 303 (libcurl.4.dylib + 83687) [0x7ff825cfb6e7]
+            403  curl_multi_perform + 222 (libcurl.4.dylib + 240855) [0x7ff825d21cd7]
+              403  multi_runsingle + 2269 (libcurl.4.dylib + 243278) [0x7ff825d2264e]
+                280  Curl_readwrite + 409 (libcurl.4.dylib + 345484) [0x7ff825d3b58c]
+                  280  Curl_conn_recv + 42 (libcurl.4.dylib + 24856) [0x7ff825ced118]
+                    280  cf_h2_recv + 180 (libcurl.4.dylib + 165090) [0x7ff825d0f4e2]
+                      280  h2_progress_ingress + 364 (libcurl.4.dylib + 169454) [0x7ff825d105ee]
+                        280  h2_process_pending_input + 75 (libcurl.4.dylib + 178057) [0x7ff825d12789]
+                          280  nghttp2_session_mem_recv2 + 11777 (libapple_nghttp2.dylib + 64229) [0x7ff818c74ae5]
+                            280  on_data_chunk_recv + 114 (libcurl.4.dylib + 173679) [0x7ff825d1166f]
+                              280  Curl_xfer_write_resp + 54 (libcurl.4.dylib + 349710) [0x7ff825d3c60e]
+                                280  cw_download_write + 525 (libcurl.4.dylib + 278109) [0x7ff825d2ae5d]
+                                  269  cw_out_write + 74 (libcurl.4.dylib + 453906) [0x7ff825d55d12]
+                                    269  cw_out_do_write + 141 (libcurl.4.dylib + 454307) [0x7ff825d55ea3]
+                                      269  cw_out_ptr_flush + 214 (libcurl.4.dylib + 455070) [0x7ff825d5619e]
+                                        269  ??? (curl + 9676) [0x1009a05cc]
+                                          269  fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                                            154  __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                                              154  __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                            115  __sfvwrite + 304 (libsystem_c.dylib + 23942) [0x7ff80893fd86]
+                                              115  __sflush + 96 (libsystem_c.dylib + 70850) [0x7ff80894b4c2]
+                                                115  __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                  11   inflate_stream + 195 (libcurl.4.dylib + 29243) [0x7ff825cee23b]
+                                    11   cw_out_write + 74 (libcurl.4.dylib + 453906) [0x7ff825d55d12]
+                                      11   cw_out_do_write + 141 (libcurl.4.dylib + 454307) [0x7ff825d55ea3]
+                                        11   cw_out_ptr_flush + 214 (libcurl.4.dylib + 455070) [0x7ff825d5619e]
+                                          11   ??? (curl + 9676) [0x1009a05cc]
+                                            11   fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                                              10   __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                                                10   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                              1    __sfvwrite + 304 (libsystem_c.dylib + 23942) [0x7ff80893fd86]
+                                                1    __sflush + 96 (libsystem_c.dylib + 70850) [0x7ff80894b4c2]
+                                                  1    __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                123  Curl_readwrite + 477 (libcurl.4.dylib + 345552) [0x7ff825d3b5d0]
+                  123  Curl_xfer_write_resp + 54 (libcurl.4.dylib + 349710) [0x7ff825d3c60e]
+                    123  cw_download_write + 525 (libcurl.4.dylib + 278109) [0x7ff825d2ae5d]
+                      123  cw_out_write + 74 (libcurl.4.dylib + 453906) [0x7ff825d55d12]
+                        123  cw_out_do_write + 141 (libcurl.4.dylib + 454307) [0x7ff825d55ea3]
+                          123  cw_out_ptr_flush + 214 (libcurl.4.dylib + 455070) [0x7ff825d5619e]
+                            123  ??? (curl + 9676) [0x1009a05cc]
+                              123  fwrite + 193 (libsystem_c.dylib + 146373) [0x7ff80895dbc5]
+                                90   __sfvwrite + 462 (libsystem_c.dylib + 24100) [0x7ff80893fe24]
+                                  90   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+                                33   __sfvwrite + 304 (libsystem_c.dylib + 23942) [0x7ff80893fd86]
+                                  33   __sflush + 96 (libsystem_c.dylib + 70850) [0x7ff80894b4c2]
+                                    33   __write_nocancel + 10 (libsystem_kernel.dylib + 15362) [0x7ff808a68c02]
+        1    ??? (curl + 47226) [0x1009a987a]
+          1    ??? (curl + 49288) [0x1009aa088]
+            1    __close_nocancel + 10 (libsystem_kernel.dylib + 8126) [0x7ff808a66fbe]
+
+  Binary Images:
+           0x10099e000 -        0x1009d4fff  curl (168)                            <E0D21AED-4656-3F1A-8FAB-52F6D9FEE43A>  /usr/bin/curl
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                           <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff80893a000 -     0x7ff8089c1e9f  libsystem_c.dylib (1752.160.4)        <D8E26E42-0A43-3361-B0A8-B45C3BB10F19>  /usr/lib/system/libsystem_c.dylib
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14) <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff818c65000 -     0x7ff818c7e61f  libapple_nghttp2.dylib (37.120.3)     <3302EFEB-B389-34F5-96B4-C52161383EB5>  /usr/lib/libapple_nghttp2.dylib
+        0x7ff825ce7000 -     0x7ff825d6a05f  libcurl.4.dylib (168)                 <EBCEDFCF-EFC1-3530-9F4C-661060531834>  /usr/lib/libcurl.4.dylib
+
+
+Powerstats for:   bsdtar
+UUID:             665F9A2B-5385-3DB9-AB57-02451C05052F
+Path:             /usr/bin/bsdtar
+Codesigning ID:   com.apple.bsdtar
+Resource Coalition: 200 samples "com.apple.Terminal"(3194), 165 samples "com.openai.codex"(5973), 2 samples "dev.zcode.app"(4553)
+Architecture:     x86_64
+Start time:       2026-08-30 23:35:16.868 +0800
+End time:         2026-08-31 01:36:18.236 +0800
+Num samples:      367 (6%)
+Primary state:    367 samples Non-Frontmost App, Non-Suppressed, Kernel mode, Effective Thread QoS Default, Requested Thread QoS User Interactive, Override Thread QoS Unspecified
+User Activity:    0 samples Idle, 367 samples Active
+Power Source:     0 samples on Battery, 367 samples on AC
+  367  start + 3240 (dyld + 78280) [0x7ff8086c41c8]
+    367  main + 8932 (bsdtar + 12484) [0x100b0d0c4]
+      367  tar_mode_x + 112 (bsdtar + 18832) [0x100b0e990]
+        367  read_archive + 2213 (bsdtar + 18101) [0x100b0e6b5]
+          364  archive_read_extract2 + 164 (libarchive.2.dylib + 752772) [0x7ff818bbec84]
+            364  copy_data + 130 (libarchive.2.dylib + 752994) [0x7ff818bbed62]
+              364  archive_write_data_block + 113 (libarchive.2.dylib + 614401) [0x7ff818b9d001]
+                364  _archive_write_disk_data_block + 157 (libarchive.2.dylib + 183037) [0x7ff818b33afd]
+                  364  write + 10 (libsystem_kernel.dylib + 14722) [0x7ff808a68982]
+          3    archive_read_extract2 + 85 (libarchive.2.dylib + 752693) [0x7ff818bbec35]
+            3    archive_write_header + 51 (libarchive.2.dylib + 614163) [0x7ff818b9cf13]
+              3    _archive_write_disk_header + 1850 (libarchive.2.dylib + 178826) [0x7ff818b32a8a]
+                3    restore_entry + 245 (libarchive.2.dylib + 188389) [0x7ff818b34fe5]
+                  3    create_filesystem_object + 199 (libarchive.2.dylib + 194103) [0x7ff818b36637]
+                    2    symlinkat + 10 (libsystem_kernel.dylib + 50506) [0x7ff808a7154a]
+                    1    create_filesystem_object_at + 1413 (libarchive.2.dylib + 196389) [0x7ff818b36f25]
+                      1    __openat + 10 (libsystem_kernel.dylib + 8150) [0x7ff808a66fd6]
+
+  Binary Images:
+           0x100b0a000 -        0x100b17fff  bsdtar (167.160.4)                    <665F9A2B-5385-3DB9-AB57-02451C05052F>  /usr/bin/bsdtar
+        0x7ff8086b1000 -     0x7ff80875d84f  dyld (1387)                           <CF55CA34-3ECB-38F3-9E3E-E20592C197BE>  /usr/lib/dyld
+        0x7ff808a65000 -     0x7ff808aa35af  libsystem_kernel.dylib (12377.161.14) <0E16C3E3-E224-378F-9FDC-28BC144F39AF>  /usr/lib/system/libsystem_kernel.dylib
+        0x7ff818b07000 -     0x7ff818be2287  libarchive.2.dylib (167.160.4)        <48E2D0D6-E76C-3F05-B808-4C140AD7D28D>  /usr/lib/libarchive.2.dylib

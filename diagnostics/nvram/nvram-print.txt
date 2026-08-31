@@ -1,0 +1,19 @@
+ota-updateType	incremental%00
+fm-activation-locked	NO
+auto-boot	true
+boot-args	-v -ibtcompatbeta revpatch=sbvmm agdpmod=pikera keepsyms=1 debug=0x100
+fm-spstatus	YES
+bluetoothExternalDongleFailed	%00
+ForceDisplayRotationInEFI	%00%00%00%00
+bluetoothInternalControllerInfo	%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00%00
+prev-lang:kbd	zh-Hans:252
+run-efi-updater	No%00
+previous-system-uuid	FBC254BE-FEAD-4D28-BEF8-0B4E2111F9AE
+prev-lang-diags:kbd	zh-Hans%00
+multiupdater-state	%01%00%00%00%00%00%00%00%00%00%00%00
+efi-boot-device-data	%02%01%0c%00%d0A%03%0a%00%00%00%00%01%01%06%00%00%1b%01%01%06%00%00%00%03%16%10%00%01%00%00%00%00%e0L%11%85#md%04%01*%00%02%00%00%00%00%08%00%01%00%00%00%00%88%ca;v%00%00%00%00%8f%92%d1%f1%fbV<B%b3%f8%01%01%b47V%f0%02%02%04%03$%00%f7%fct%be|%0b%f3I%91G%01%f4%04.hB%98%97%a1%f3m[0G%9e%14%80|S%8d%16n%04%04%9a%00\%00F%00B%00C%002%005%004%00B%00E%00-%00F%00E%00A%00D%00-%004%00D%002%008%00-%00B%00E%00F%008%00-%000%00B%004%00E%002%001%001%001%00F%009%00A%00E%00\%00S%00y%00s%00t%00e%00m%00\%00L%00i%00b%00r%00a%00r%00y%00\%00C%00o%00r%00e%00S%00e%00r%00v%00i%00c%00e%00s%00\%00b%00o%00o%00t%00.%00e%00f%00i%00%00%00%7f%ff%04%00
+efi-boot-device	<array><dict><key>IOMatch</key><dict><key>IOProviderClass</key><string>IOMedia</string><key>IOPropertyMatch</key><dict><key>UUID</key><string>F3A19798-5B6D-4730-9E14-807C538D166E</string></dict></dict><key>BLLastBSDName</key><string>disk1s2</string></dict><dict><key>IOEFIDevicePathType</key><string>MediaFilePath</string><key>Path</key><string>\FBC254BE-FEAD-4D28-BEF8-0B4E2111F9AE\System\Library\CoreServices\boot.efi</string></dict></array>%00
+csr-active-config	%03%00%00%00
+SystemAudioVolume	F
+multiupdater-retry-limits	%01%00%00%00%00%00%00%00
+AAPL,PanicInfo000K	X%ec6%be%c9`0%98%02%04j%96%e9ar%98%1e%d6%81`x%b3%d9l6%9b%c5a[%99%86%9b%c1`0P%0b%04%c3%9b%cdf%b3%d9,%0e%e3%ca4%dc%0c%06%83)@ a%9a%de%0e%c3%e7 %1d%08%867%9b%cdf%b3Y%1c%c6%95i%b8%19%0c%06%03%b5@0%bc%d9l6%9b%cd%e20%ce<%c6%cd`0%98%02%04*%e2%e9%f20%08%04%d2%81`%a0%16%08%a6P%00%00
