@@ -56,3 +56,12 @@
 - **应机主要求，旧 EFI 备份 `efi-backup/internal-old-20260831/` 已删除**（仓库内仍留有更早的 `efi-backup/original-20260830/`）。至此"选错引导路径就黑屏"的隐患已消除：内置盘与 U盘均为同一套 OC 1.0.7 新 EFI。
 - **ResizeAppleGpuBars 现状**：新 config（内置/U盘/仓库三处一致）**均无此键**。OC 对缺失键的处理是不改动 GPU BAR，即维持 BIOS 现状（Re-Size BAR = 开启）。docs 承诺的 `=0`（禁用）仍未落地，是否补写待机主确认。
 - 待验证：多次重启，确认全部经内置盘新 EFI 引导且无 `doGddr6LongTraining` panic。
+
+---
+
+## 第 3 轮（2026-08-31）：ResizeAppleGpuBars 已落地为 8
+
+- 应机主要求（RX 6800 16G 显存，BAR 固定 8GB），`NVRAM→Add→7C43…9F82→ResizeAppleGpuBars` 由"缺省（不碰 GPU BAR，维持 BIOS 开启）"改为 **`8`**，已写入三处 config（仓库 `efi-new/tahoe-oc107`、内置盘 ESP、U盘 ESP），三处二进制一致。
+- `ocvalidate 1.0.7` 校验零问题；`scripts/build_tahoe_config.py` 已同步补上该键，防止将来重建 config 时再次丢失。
+- 生效条件：NVRAM→WriteFlash=True（已开），下次重启后 OC 会把该值写入 NVRAM 生效。
+- 后续观察点：重启多次确认无 `doGddr6LongTraining` panic；若仍偶发，回退方案为进 BIOS 关闭 ResizeBAR 或锁 PCIe Gen3。

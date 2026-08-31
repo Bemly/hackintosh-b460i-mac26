@@ -156,6 +156,9 @@ def main(old_p, sample_p, efi_dir, out_p):
     nv['bluetoothExternalDongleFailed'] = bytes([0])
     nv['bluetoothInternalControllerInfo'] = bytes(16)
 
+    # 6.2) GPU BAR 固定 8GB（RX 6800 16G；Navi GDDR6 训练 panic 的已知缓解项）
+    nv['ResizeAppleGpuBars'] = '8'
+
     # 7) SecureBootModel 关闭（Tahoe 升级期最稳，与上游 4.0.0 一致）
     old['Misc']['Security']['SecureBootModel'] = 'Disabled'
     # 保险库保持可选，扫描策略 0(全部)
