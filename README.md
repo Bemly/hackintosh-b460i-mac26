@@ -85,4 +85,4 @@ hackintosh-b460i-mac26/
 
 ## Git 约定
 
-改动即 commit（诊断分轮提交：`b25ce79` 取证 → `437a0d5` EFI 回填 → `bc4a6af` ResizeAppleGpuBars），可逐阶段回溯。注意：`diagnostics/` 内含机器序列号等隐私，**本仓库保持私有**，若要转公开需先清洗该目录。
+改动即 commit（诊断分轮提交：`8aa74d2` 取证 → `84d0394` EFI 回填 → `75cbcbe` ResizeAppleGpuBars），可逐阶段回溯。仓库内 config 的 PlatformInfo（序列号/MLB/UUID/ROM）已替换为占位符，克隆使用前请用 GenSMBIOS 等工具生成自己的标识。

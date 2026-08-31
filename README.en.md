@@ -85,4 +85,4 @@ hackintosh-b460i-mac26/
 
 ## Git Conventions
 
-Every change is committed; diagnostics are committed round by round (`b25ce79` forensics → `437a0d5` EFI swap → `bc4a6af` ResizeAppleGpuBars) so any stage can be revisited. Note: `diagnostics/` contains machine serial numbers and other private data — **keep this repository private**; scrub that directory before ever making it public.
+Every change is committed; diagnostics are committed round by round (`8aa74d2` forensics → `84d0394` EFI swap → `75cbcbe` ResizeAppleGpuBars) so any stage can be revisited. The PlatformInfo values (serial/MLB/UUID/ROM) in the committed configs are placeholders — generate your own with GenSMBIOS or similar before using them.
