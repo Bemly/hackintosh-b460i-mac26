@@ -46,3 +46,13 @@
   4. 若回填后仍偶发 `doGddr6LongTraining` panic：进 BIOS 关闭 ResizeBAR 或固定 PCIe Gen3 试之（硬件级显存训练兼容性，与 EFI 无关的残余概率）。
   5. 可选：清 NVRAM 残留 panic 变量 `AAPL,PanicInfo000K`（`sudo nvram -d AAPL,PanicInfo000K`）。
   6. 蓝牙崩溃问题单独开一轮诊断（先查 `IntelBluetoothFirmware 2.5.1 Tahoe fork` 与 Tahoe 26.6.2 的匹配性）。
+
+---
+
+## 第 2 轮（2026-08-31）：内置盘 EFI 已替换为 OC 1.0.7 新件
+
+- **内置盘 ESP（disk0s1 → /Volumes/NO NAME）已完成回填**：旧 EFI 先备份至 `efi-backup/internal-old-20260831/`（62M），随后 `rm -rf` 旧 EFI、`ditto efi-new/tahoe-oc107/EFI` 部署新件；部署前 `ocvalidate 1.0.7` 零问题。
+- **验证**：内置 ESP 与 U盘 ESP `diff -rq` 完全一致（exit 0）；与仓库差异仅为无害 AppleDouble `._*` 垃圾文件。
+- **应机主要求，旧 EFI 备份 `efi-backup/internal-old-20260831/` 已删除**（仓库内仍留有更早的 `efi-backup/original-20260830/`）。至此"选错引导路径就黑屏"的隐患已消除：内置盘与 U盘均为同一套 OC 1.0.7 新 EFI。
+- **ResizeAppleGpuBars 现状**：新 config（内置/U盘/仓库三处一致）**均无此键**。OC 对缺失键的处理是不改动 GPU BAR，即维持 BIOS 现状（Re-Size BAR = 开启）。docs 承诺的 `=0`（禁用）仍未落地，是否补写待机主确认。
+- 待验证：多次重启，确认全部经内置盘新 EFI 引导且无 `doGddr6LongTraining` panic。
